@@ -24,13 +24,21 @@
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
-        specialArgs = {inherit inputs self;};
+        specialArgs = { inherit inputs self; };
         inherit system;
         modules = [
           ./hosts/clover/configuration.nix
           ./modules
-          ./hosts/clover/home.nix
           inputs.home-manager.nixosModules.default
+        ];
+      };
+    };
+
+    homeConfigurations = {
+      clover = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs;
+        modules = [
+          ./hosts/clover/home.nix
         ];
       };
     };
