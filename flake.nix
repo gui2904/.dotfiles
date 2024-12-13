@@ -28,11 +28,11 @@
         inherit system;
         modules = [
           ./hosts/clover/configuration.nix
+          ./hosts/clover/home.nix
           ./modules
           inputs.home-manager.nixosModules.default
         ];
       };
-    };
     };
   };
 }
