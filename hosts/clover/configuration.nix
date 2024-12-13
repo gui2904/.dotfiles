@@ -108,8 +108,6 @@
      hyprutils
      syncthing
      hyprwayland-scanner
-     vesktop
-     air
    ];
   };
 

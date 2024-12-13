@@ -15,6 +15,8 @@
     python3
     go
     air
+    vesktop
+    direnv
   ];
 
   home.file = {

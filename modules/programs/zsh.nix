@@ -18,7 +18,7 @@
         git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
       }
 
-	alias air='~/.air'
+      eval "$(direnv hook zsh)"
 
       autoload -U colors && colors
       function prompt() {
