@@ -4,7 +4,6 @@
   imports = [
     ../../modules/programs/zsh.nix
     ../../modules/programs/rofi.nix
-    inputs.schizofox.homeManagerModules.default
   ];
 
   home.username = "clover";
@@ -53,8 +52,6 @@
   
   #gtk.enable = true;
   #qt.enable = true;
-
-
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
