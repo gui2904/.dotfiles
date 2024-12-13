@@ -23,15 +23,15 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      clover = lib.nixosSystem {
         specialArgs = { inherit inputs self; };
-        inherit system;
-        modules = [
-          ./hosts/clover/configuration.nix
-          ./hosts/clover/home.nix
-          ./modules
-          inputs.home-manager.nixosModules.default
-        ];
+	inherit system;
+	modules = [
+		./hosts/clover/configuration.nix
+		./hosts/clover/home.nix
+		./modules
+                inputs.home-manager.nixosModules.default
+	];
       };
     };
   };

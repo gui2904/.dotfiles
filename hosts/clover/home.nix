@@ -5,7 +5,6 @@
     ../../modules/programs/zsh.nix
     ../../modules/programs/rofi.nix
     inputs.schizofox.homeManagerModules.default
-    inputs.home-manager.nixosModules.default
   ];
 
   home.username = "clover";
@@ -56,8 +55,6 @@
   #qt.enable = true;
 
 
-  programs.schizofox.enable = true;
-  
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
