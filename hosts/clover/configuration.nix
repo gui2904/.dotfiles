@@ -1,12 +1,8 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
     ];
 
@@ -14,15 +10,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # ZSH
-  environment.shells = with pkgs; [ zsh ];
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh = {
-    enable = true;
-    shellInit = "autoload -Uz add-zsh-hook";
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-  };
+  # Schizofox
 
   # Foot
   programs.foot = {
@@ -64,7 +52,7 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
   
-  services.blueman.enable = true;
+  # services.blueman.enable = true;
 
   # Syncthing
   services.syncthing.enable = true;
@@ -143,7 +131,7 @@
 
   programs.thunar.enable = true;
 
-  hardware.bluetooth.enable = true;
+  # hardware.bluetooth.enable = true;
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })

@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
-    ./zsh.nix   
+    ./zsh.nix
+    ./rofi.nix
   ];
 }
