@@ -5,6 +5,7 @@
     ../../modules/programs/zsh.nix
     ../../modules/programs/rofi.nix
     inputs.schizofox.homeManagerModules.default
+    inputs.home-manager.nixosModules.default
   ];
 
   home.username = "clover";

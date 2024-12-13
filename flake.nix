@@ -33,14 +33,6 @@
         ];
       };
     };
-
-    homeConfigurations = {
-      clover = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgs;
-        modules = [
-          ./hosts/clover/home.nix
-        ];
-      };
     };
   };
 }
