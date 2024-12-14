@@ -71,7 +71,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.clover = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" "syncthing" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "networkmanager" "syncthing" "docker" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
      vim 
      wget
@@ -115,12 +115,15 @@
 
   users.users.syncthing.extraGroups = [ "clover" ];
 
+  users.extraGroups.docker.members = [ "clover" ];
+
   environment.systemPackages = with pkgs; [
     hyprland
     syncthing
     foot
     rustup
     gcc
+    docker
   ];  
 
   # permissions for syncthing
@@ -153,10 +156,15 @@
    };
    services.dbus.enable = true;
    xdg.portal = {
-       enable = true;
-       extraPortals = [
+     enable = true;
+     extraPortals = [
        pkgs.xdg-desktop-portal-gtk
-       ];
+     ];
+   };
+
+   virtualisation.docker.rootless = {
+     enable = true;
+     setSocketVariable = true;
    };
 	
   # Enable the OpenSSH daemon.

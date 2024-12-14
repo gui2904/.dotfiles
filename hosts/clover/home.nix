@@ -17,6 +17,7 @@
     air
     vesktop
     direnv
+    nodejs
   ];
 
   home.file = {
