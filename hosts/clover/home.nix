@@ -1,13 +1,22 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [
-    ../../modules/programs/zsh.nix
-    ../../modules/programs/rofi.nix
-  ];
+  #imports = [
+  #  ../../modules/programs/zsh.nix
+  #  ../../modules/programs/rofi.nix
+  #];
 
   home.username = "clover";
   home.homeDirectory = "/home/clover";
+
+  clover = {
+    programs = {
+      zsh.enable = true;
+      zsh.carapace.enable = true;
+
+      emacs.enable = true;
+    };
+  };
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
@@ -25,6 +34,7 @@
     ncmpcpp
     libreoffice
     feh
+    alejandra
   ];
 
   home.file = {
@@ -53,16 +63,16 @@
   #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
   #
   # or
-  #
-  #  /etc/profiles/per-user/clover/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
-  
-  #gtk.enable = true;
-  #qt.enable = true;
+#
+#  /etc/profiles/per-user/clover/etc/profile.d/hm-session-vars.sh
+#
+#  home.sessionVariables = { 
+#    PATH = "/run/current-system/sw/bin:${config.home.profileDirectory}/bin";
+#  };
 
-  # Let Home Manager install and manage itself.
+#gtk.enable = true;
+#qt.enable = true;
+
+# Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

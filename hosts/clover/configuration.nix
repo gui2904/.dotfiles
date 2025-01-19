@@ -20,17 +20,17 @@
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-   time.timeZone = "America/New_York";
+  time.timeZone = "America/New_York";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
@@ -41,7 +41,7 @@
   # services.xserver.enable = true;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -58,61 +58,62 @@
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
-   services.pipewire = {
-     enable = true;
-     alsa.enable = true;
-     alsa.support32Bit = true;
-     pulse.enable = true;
-   };
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
-   services.libinput.enable = true;
+  services.libinput.enable = true;
 
-   programs.zsh.enable = true;
+  programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.clover = {
-     isNormalUser = true;
-     shell = pkgs.zsh;
-     extraGroups = [ "wheel" "networkmanager" "syncthing" "docker" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [
-     vim 
-     wget
-     emacs
-     foot
-     firefox-wayland
-     git
-     gimp
-     gtk3
-     neofetch
-     mpv
-     pavucontrol
-     pipewire
-     pkg-config
-     qt5.qtwayland
-     qt6.qmake
-     sddm
-     unzip 
-     waybar
-     wofi
-     jq
-     grim
-     slurp
-     wl-clipboard
-     libnotify
-     wayland
-     wayland-protocols
-     pango
-     cairo
-     file
-     libglvnd
-     libwebp
-     hyprlang
-     hyprutils
-     syncthing
-     hyprwayland-scanner
-     #python3.11-numpy
-   ];
+  users.users.clover = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "networkmanager" "syncthing" "docker" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      vim 
+      wget
+      emacs
+      foot
+      firefox-wayland
+      git
+      gimp
+      gtk3
+      neofetch
+      mpv
+      pavucontrol
+      pipewire
+      pkg-config
+      qt5.qtwayland
+      qt6.qmake
+      sddm
+      unzip 
+      waybar
+      wofi
+      jq
+      grim
+      slurp
+      wl-clipboard
+      libnotify
+      wayland
+      wayland-protocols
+      pango
+      cairo
+      file
+      libglvnd
+      libwebp
+      hyprlang
+      hyprutils
+      syncthing
+      hyprwayland-scanner
+      tree-sitter
+      #python3.11-numpy
+    ];
   };
 
   users.groups.clover = {};
@@ -132,6 +133,8 @@
     zip
     cmake
     libtool
+    eza
+    #emacsPackages.tree-sitter-langs
   ];  
 
   # permissions for syncthing
@@ -148,19 +151,32 @@
     nerd-fonts.fira-code
     cantarell-fonts
     jetbrains-mono
+    corefonts
+    vistafonts
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    liberation_ttf
+    font-awesome
+    dejavu_fonts
+    jost
+    inter
+    lmodern
+    roboto 
+    nerd-fonts.jetbrains-mono
   ];
 
   # tor
-#  services.tor = {
-#  enable = false;
-#  openFirewall = true;
-#  relay = {
-#    enable = true;
-#    role = "relay";
-#  };
-#};
+  #  services.tor = {
+  #  enable = false;
+  #  openFirewall = true;
+  #  relay = {
+  #    enable = true;
+  #    role = "relay";
+  #  };
+  #};
 
-# trash bin
+  # trash bin
 
   services.gvfs.enable = true;
 
@@ -174,36 +190,38 @@
   # };
 
   # List services that you want to enable:
-   services.emacs = {
-     enable = true;
-     package = pkgs.emacs;
-   };
-   services.dbus.enable = true;
-   xdg.portal = {
-     enable = true;
-     extraPortals = [
-       pkgs.xdg-desktop-portal-gtk
-     ];
-   };
+  #services.emacs = {
+  #  enable = true;
+  #  package = pkgs.emacs;
+  #};
+  services.dbus.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
 
-   #virtualisation.docker.enable = true;
-   #virtualisation.docker.rootless = {
-   #  enable = true;
-   #  setSocketVariable = true;
-   #};
+  #virtualisation.docker.enable = true;
+  #virtualisation.docker.rootless = {
+  #  enable = true;
+  #  setSocketVariable = true;
+  #};
 	
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
-   services.locate = {
-      enable = true;
-      package = pkgs.plocate;
-      localuser = null;
-   };
+  services.locate = {
+    enable = true;
+    package = pkgs.plocate;
+    localuser = null;
+  };
+
+  nixpkgs.config.allowUnfree = true;
 
   # Fonts
-   fonts.fontDir.enable = true;
-   fonts.fontconfig.enable = true;
+  fonts.fontDir.enable = true;
+  fonts.fontconfig.enable = true;
 
 
   # Open ports in the firewall.

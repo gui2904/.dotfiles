@@ -1,32 +1,57 @@
-{ config, pkgs, ... }:
+{ 
+config, 
+pkgs, 
+lib, 
+... 
+}: let
+  cfg = config.clover.programs.zsh;
+in {
+  options.clover.programs.zsh = {
+    enable = lib.mkEnableOption "zsh";
+    carapace.enable = lib.mkEnableOption "carapace zsh integration";
+    enableLsColors = true;  # Directly enable LS colors for zsh
+  };
 
-{
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    zprof.enable = false;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.nix-zsh-completions
+    ];
 
-    history = {
-     size = 10000;
-     path = "${config.xdg.dataHome}/zsh/history";
+    programs.carapace = lib.mkIf cfg.carapace.enable {
+      enable = lib.mkDefault true;
+      enableZshIntegration = true;
     };
-    
-    initExtra = ''
 
-      zmodload zsh/complist
+    programs.zsh = {
+      enable = true;
+      autocd = true;
+      enableCompletion = true;
+      zprof.enable = false;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      shellAliases = {
+        tree = "eza --tree --icons";
+        emacs = "emacsclient -nc -a 'helix'";
+      };
 
-      function parse_git_branch() {
-        git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
-      }
+      history = {
+        expireDuplicatesFirst = true;
+        size = 10000;
+        path = "${config.xdg.dataHome}/zsh/history";
+        append = true;
+      };
 
-      alias emacs="emacsclient -nc -a 'helix'"
+      initExtra = ''
+        zmodload zsh/complist
 
-      autoload -U colors && colors
+        function parse_git_branch() {
+          git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
+        }
 
-      PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
+        autoload -U colors && colors
 
-    '';
+        PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
+      '';
+    };
   };
 }
