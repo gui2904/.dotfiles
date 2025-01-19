@@ -18,6 +18,12 @@
     vesktop
     direnv
     nodejs
+    go-migrate
+    goose
+    sqlite
+    tor
+    ncmpcpp
+    libreoffice
   ];
 
   home.file = {

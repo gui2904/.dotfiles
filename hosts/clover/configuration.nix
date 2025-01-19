@@ -10,8 +10,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Schizofox
-
   # Foot
   programs.foot = {
     enable = true;
@@ -55,22 +53,27 @@
   # services.blueman.enable = true;
 
   # Syncthing
-  services.syncthing.enable = true;
+  services.syncthing.enable = false;
   
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
    services.pipewire = {
      enable = true;
+     alsa.enable = true;
+     alsa.support32Bit = true;
      pulse.enable = true;
    };
 
   # Enable touchpad support (enabled default in most desktopManager).
    services.libinput.enable = true;
 
+   programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.clover = {
      isNormalUser = true;
+     shell = pkgs.zsh;
      extraGroups = [ "wheel" "networkmanager" "syncthing" "docker" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
      vim 
@@ -108,14 +111,15 @@
      hyprutils
      syncthing
      hyprwayland-scanner
+     #python3.11-numpy
    ];
   };
 
   users.groups.clover = {};
 
-  users.users.syncthing.extraGroups = [ "clover" ];
+  #users.users.syncthing.extraGroups = [ "clover" ];
 
-  users.extraGroups.docker.members = [ "clover" ];
+  # users.extraGroups.docker.members = [ "clover" ];
 
   environment.systemPackages = with pkgs; [
     hyprland
@@ -124,6 +128,10 @@
     rustup
     gcc
     docker
+    gnumake
+    zip
+    cmake
+    libtool
   ];  
 
   # permissions for syncthing
@@ -139,7 +147,19 @@
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     fira-code
     cantarell-fonts
+    jetbrains-mono
   ];
+
+  # tor
+#  services.tor = {
+#  enable = false;
+#  openFirewall = true;
+#  relay = {
+#    enable = true;
+#    role = "relay";
+#  };
+#};
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -162,11 +182,11 @@
      ];
    };
 
-   virtualisation.docker.enable = true;
-   virtualisation.docker.rootless = {
-     enable = true;
-     setSocketVariable = true;
-   };
+   #virtualisation.docker.enable = true;
+   #virtualisation.docker.rootless = {
+   #  enable = true;
+   #  setSocketVariable = true;
+   #};
 	
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
