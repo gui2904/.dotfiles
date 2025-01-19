@@ -14,7 +14,7 @@
   programs.foot = {
     enable = true;
     theme = "chiba-dark";
-    settings.main.font = "Fira Code:size=11";
+    settings.main.font = "JetBrains Mono:size=11";
   };
 
   # networking.hostName = "nixos"; # Define your hostname.
@@ -144,8 +144,8 @@
   # hardware.bluetooth.enable = true;
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-    fira-code
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.fira-code
     cantarell-fonts
     jetbrains-mono
   ];
@@ -159,6 +159,10 @@
 #    role = "relay";
 #  };
 #};
+
+# trash bin
+
+  services.gvfs.enable = true;
 
 
   # Some programs need SUID wrappers, can be configured further or are

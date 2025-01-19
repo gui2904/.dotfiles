@@ -24,6 +24,7 @@
     tor
     ncmpcpp
     libreoffice
+    feh
   ];
 
   home.file = {
