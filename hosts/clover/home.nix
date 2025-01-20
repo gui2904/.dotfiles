@@ -9,13 +9,11 @@
   home.username = "clover";
   home.homeDirectory = "/home/clover";
 
-  clover = {
-    programs = {
-      zsh.enable = true;
-      zsh.carapace.enable = true;
+  programs = {
+    zsh.enable = true;
+    zsh.carapace.enable = true;
 
-      emacs.enable = true;
-    };
+    emacs.enable = true;
   };
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
