@@ -8,7 +8,6 @@
   clover.programs = {
     zsh.enable = true;
     emacs.enable = true;
-    foot.enable = true;
   };
 
   home.stateVersion = "24.05"; 
