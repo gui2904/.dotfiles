@@ -11,11 +11,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Foot
-  programs.foot = {
-    enable = true;
-    theme = "chiba-dark";
-    settings.main.font = "JetBrains Mono:size=11";
-  };
+  #programs.foot = {
+  #  enable = true;
+  #  theme = "chiba-dark";
+  #  settings.main.font = "JetBrains Mono:size=11";
+  #};
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.

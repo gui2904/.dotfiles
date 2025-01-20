@@ -7,11 +7,11 @@
 
   clover.programs = {
     zsh.enable = true;
-    
     emacs.enable = true;
+    foot.enable = true;
   };
 
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "24.05"; 
 
   home.packages = with pkgs; [
     python3
@@ -29,18 +29,6 @@
     feh
     alejandra
   ];
-
-  # Foot
-  # programs.foot = {
-  #   enable = true;
-
-  #   settings = {
-  #     main = {
-  #       font = "JetBrains Mono:size=11";
-  #       theme = "chiba-dark";
-  #     };
-  #   };
-  # };
 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
