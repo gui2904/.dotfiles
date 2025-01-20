@@ -10,8 +10,10 @@
   home.homeDirectory = "/home/clover";
 
   programs = {
-    zsh.enable = true;
-    zsh.carapace.enable = true;
+    zsh = {
+      enable = true;
+    };
+    carapace.enableZshIntegration = true;
 
     emacs.enable = true;
   };

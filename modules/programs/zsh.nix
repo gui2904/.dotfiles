@@ -8,7 +8,6 @@ lib,
 in {
   options.clover.programs.zsh = {
     enable = lib.mkEnableOption "zsh";
-    carapace.enable = lib.mkEnableOption "carapace zsh integration";
     enableLsColors = true;  # Directly enable LS colors for zsh
   };
 
