@@ -1,8 +1,8 @@
 { 
-config, 
-pkgs, 
-lib, 
-... 
+  config, 
+  pkgs, 
+  lib, 
+  ... 
 }: let
   cfg = config.clover.programs.zsh;
 in {
@@ -51,6 +51,12 @@ in {
 
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
       '';
+
+      environment.shells =
+        [
+          "/run/current-system/sw/bin/zsh"
+          "${pkgs.zsh}/bin/zsh"
+        ];
     };
   };
 }
