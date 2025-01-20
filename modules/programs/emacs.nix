@@ -2,41 +2,31 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: let
-  # declare an emacs package derived from emacs, but it also compiles vterm
-  myEmacs =
-    (pkgs.emacsPackagesFor
-      inputs.emacs-overlay.packages.${pkgs.system}.emacs-pgtk)
-    .emacsWithPackages
-    (epkgs:
-      (builtins.attrValues {
-        inherit
-          (epkgs.melpaPackages)
-          vterm
-          ;
-      })
-      ++ [epkgs.treesit-grammars.with-all-grammars]);
-
-  cfg = config.clover.programs.emacs;
+  emacsDir = "${config.home.homeDirectory}/.config/emacs";
 in {
   options.clover.programs.emacs = {
-    enable = lib.mkEnableOption "emacs service";
+    enable = lib.mkEnableOption "Enable Emacs";
     client.enable = lib.mkEnableOption "emacs client";
     standalone.enable = lib.mkEnableOption "emacs standalone";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf config.clover.programs.emacs.enable {
+    programs.emacs = {
+      enable = true;
+      package = pkgs.emacs;  # Use the default Emacs package
+  
+
+      extraConfig = ''
+        (setq user-emacs-directory (expand-file-name "~/.config/emacs/"))
+        (load-file (concat user-emacs-directory "init.el"))
+      '';
+    };
+    
     services.emacs = {
       enable = true;
-      client.enable = cfg.client.enable;
-      package = myEmacs;
+      package = pkgs.emacs;
     };
-    home.packages = [
-      (lib.mkIf
-        cfg.standalone.enable
-        myEmacs)
-    ];
-  };
-}
+  }; 
+ }

@@ -70,16 +70,14 @@
 
   programs.zsh.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.clover = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "networkmanager" "syncthing" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "syncthing" "docker" ];
     packages = with pkgs; [
       vim 
       wget
       emacs
-      foot
       firefox-wayland
       git
       gimp
@@ -125,7 +123,6 @@
   environment.systemPackages = with pkgs; [
     hyprland
     syncthing
-    foot
     rustup
     gcc
     docker
@@ -190,10 +187,10 @@
   # };
 
   # List services that you want to enable:
-  #services.emacs = {
-  #  enable = true;
-  #  package = pkgs.emacs;
-  #};
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+  };
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;

@@ -1,20 +1,13 @@
 { config, pkgs, inputs, ... }:
 
 {
-  #imports = [
-  #  ../../modules/programs/zsh.nix
-  #  ../../modules/programs/rofi.nix
-  #];
 
   home.username = "clover";
   home.homeDirectory = "/home/clover";
 
-  programs = {
-    zsh = {
-      enable = true;
-    };
-    carapace.enableZshIntegration = true;
-
+  clover.programs = {
+    zsh.enable = true;
+    
     emacs.enable = true;
   };
 
@@ -36,6 +29,18 @@
     feh
     alejandra
   ];
+
+  # Foot
+  # programs.foot = {
+  #   enable = true;
+
+  #   settings = {
+  #     main = {
+  #       font = "JetBrains Mono:size=11";
+  #       theme = "chiba-dark";
+  #     };
+  #   };
+  # };
 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -65,10 +70,6 @@
   # or
 #
 #  /etc/profiles/per-user/clover/etc/profile.d/hm-session-vars.sh
-#
-#  home.sessionVariables = { 
-#    PATH = "/run/current-system/sw/bin:${config.home.profileDirectory}/bin";
-#  };
 
 #gtk.enable = true;
 #qt.enable = true;

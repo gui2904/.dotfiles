@@ -16,10 +16,10 @@ in {
       pkgs.nix-zsh-completions
     ];
 
-    programs.carapace = lib.mkIf cfg.carapace.enable {
-      enable = lib.mkDefault true;
-      enableZshIntegration = true;
-    };
+    # programs.carapace = lib.mkIf cfg.carapace.enable {
+    #   enable = lib.mkDefault true;
+    #   enableZshIntegration = true;
+    # };
 
     programs.zsh = {
       enable = true;
