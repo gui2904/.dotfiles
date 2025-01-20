@@ -146,6 +146,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.droid-sans-mono
     nerd-fonts.fira-code
+    fira-code
     cantarell-fonts
     jetbrains-mono
     corefonts
