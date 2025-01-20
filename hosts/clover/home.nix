@@ -30,6 +30,16 @@
     alejandra
   ];
 
+  # Foot
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        font = "Fira Code:size=11";
+      }; 
+    };
+  };
+
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -56,12 +66,12 @@
   #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
   #
   # or
-#
-#  /etc/profiles/per-user/clover/etc/profile.d/hm-session-vars.sh
+  #
+  #  /etc/profiles/per-user/clover/etc/profile.d/hm-session-vars.sh
 
-#gtk.enable = true;
-#qt.enable = true;
+  #gtk.enable = true;
+  #qt.enable = true;
 
-# Let Home Manager install and manage itself.
+  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
