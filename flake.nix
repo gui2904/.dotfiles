@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs: let
+  outputs = { nixpkgs, home-manager, ... } @ inputs: 
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
