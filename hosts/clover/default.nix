@@ -138,6 +138,7 @@
     hyprlang
     hyprcursor
     hyprutils
+    aquamarine
     hyprwayland-scanner
     #emacsPackages.tree-sitter-langs
   ];  

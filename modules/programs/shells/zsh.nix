@@ -50,6 +50,7 @@ in {
         
         export HYPRCURSOR_THEME="Bibata-Modern-Ice"
         export HYPRCURSOR_SIZE=24
+        export XCURSOR_SIZE=24
 
         autoload -U colors && colors
 
