@@ -13,8 +13,8 @@
 
       emacs.enable = {
         enable = true;
-        # client.enable = true;
-        # standalone.enable = true;
+        client.enable = true;
+        standalone.enable = true;
       };
     };
   };
