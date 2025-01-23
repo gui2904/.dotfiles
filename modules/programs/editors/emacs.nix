@@ -12,7 +12,6 @@ in {
     programs.emacs = {
       enable = true;
       package = pkgs.emacs;  # Use the default Emacs package
-      client.enable = cfg.client.enable;
       extraConfig = ''
         (setq user-emacs-directory (expand-file-name "~/.config/emacs/"))
         (load-file (concat user-emacs-directory "init.el"))
@@ -21,6 +20,7 @@ in {
 
     services.emacs = {
       enable = true;
+      client.enable = cfg.client.enable;
     };
 
   };
