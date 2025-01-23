@@ -181,12 +181,6 @@
     package = pkgs.emacs;
   };
   services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
 
   #virtualisation.docker.enable = true;
   #virtualisation.docker.rootless = {
