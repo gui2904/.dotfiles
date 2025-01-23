@@ -4,6 +4,7 @@
 in {
   options.clover.programs.emacs = {
     enable = lib.mkEnableOption "Enable Emacs";
+    client.enable = lib.mkEnableOption "emacs client";
     standalone.enable = lib.mkEnableOption "Enable Emacs Standalone";
   };
 
