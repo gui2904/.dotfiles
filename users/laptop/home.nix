@@ -4,8 +4,8 @@
   config,
   ...
 }: { 
-  # home.username = "";
-  # home.homeDirectory = "";
+  home.username = "laptop";
+  home.homeDirectory = "/home/clover";
   
   clover = {
     programs = {
