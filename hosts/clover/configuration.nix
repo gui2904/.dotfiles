@@ -65,49 +65,49 @@
 
   programs.zsh.enable = true;
 
-  users.users.clover = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "wheel" "networkmanager" "syncthing" "docker" ];
-    packages = with pkgs; [
-      vim 
-      wget
-      emacs
-      firefox-wayland
-      git
-      gimp
-      gtk3
-      neofetch
-      mpv
-      pavucontrol
-      pipewire
-      pkg-config
-      qt5.qtwayland
-      qt6.qmake
-      sddm
-      unzip 
-      waybar
-      wofi
-      jq
-      grim
-      slurp
-      wl-clipboard
-      libnotify
-      wayland
-      wayland-protocols
-      pango
-      cairo
-      file
-      libglvnd
-      libwebp
-      hyprlang
-      hyprutils
-      syncthing
-      hyprwayland-scanner
-      tree-sitter
-      #python3.11-numpy
-    ];
-  };
+  # users.users.clover = {
+  #   isNormalUser = true;
+  #   shell = pkgs.zsh;
+  #   extraGroups = [ "wheel" "networkmanager" "syncthing" "docker" ];
+  #   packages = with pkgs; [
+  #     vim 
+  #     wget
+  #     emacs
+  #     firefox-wayland
+  #     git
+  #     gimp
+  #     gtk3
+  #     neofetch
+  #     mpv
+  #     pavucontrol
+  #     pipewire
+  #     pkg-config
+  #     qt5.qtwayland
+  #     qt6.qmake
+  #     sddm
+  #     unzip 
+  #     waybar
+  #     wofi
+  #     jq
+  #     grim
+  #     slurp
+  #     wl-clipboard
+  #     libnotify
+  #     wayland
+  #     wayland-protocols
+  #     pango
+  #     cairo
+  #     file
+  #     libglvnd
+  #     libwebp
+  #     hyprlang
+  #     hyprutils
+  #     syncthing
+  #     hyprwayland-scanner
+  #     tree-sitter
+  #     #python3.11-numpy
+  #   ];
+  # };
 
   users.groups.clover = {};
 
