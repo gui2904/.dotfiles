@@ -98,6 +98,7 @@
 
   environment.systemPackages = with pkgs; [
     gtk3
+    hyprland
     syncthing
     rustup
     gcc
@@ -135,12 +136,16 @@
     libglvnd
     libwebp
     hyprlang
+    hyprcursor
     hyprutils
     hyprwayland-scanner
     #emacsPackages.tree-sitter-langs
   ];  
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   programs.thunar.enable = true;
 
