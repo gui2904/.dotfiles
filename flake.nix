@@ -14,6 +14,10 @@
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      req-modules = [
+        ./modules
+        ./users
+      ];
       home-module = [
         home-manager.nixosModules.home-manager
         {
