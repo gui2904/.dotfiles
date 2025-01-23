@@ -28,7 +28,7 @@
       nixosConfigurations = {
         clover = lib.nixosSystem {
           specialArgs = {inherit system inputs;};
-          modules = home-modules ++ [
+          modules = home-module ++ [
             ./hosts/clover/configuration.nix
           ];
         };
