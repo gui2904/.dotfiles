@@ -22,7 +22,6 @@ in {
     services.emacs = {
       enable = true;
       client.enable = cfg.client.enable;
-      package = myEmacs;
     };
 
   };
