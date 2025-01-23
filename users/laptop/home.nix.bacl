@@ -2,7 +2,7 @@
   pkgs,
   inputs,
   ...
-}: { 
+}: let 
   clover = {
     programs = {
       zsh.enable = true;
@@ -12,7 +12,6 @@
         client.enable = true;
         standalone.enable = true;
       };
+
     };
   };
-  home.stateVersion = "24.05";
-}
