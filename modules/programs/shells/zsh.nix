@@ -11,10 +11,10 @@ in {
     enableLsColors = true;  # Directly enable LS colors for zsh
   };
 
-  # config = lib.mkIf cfg.enable {
-  #   home.packages = [
-  #     pkgs.nix-zsh-completions
-  #   ];
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.nix-zsh-completions
+    ];
 
     # programs.carapace = lib.mkIf cfg.carapace.enable {
     #   enable = lib.mkDefault true;
@@ -52,5 +52,4 @@ in {
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
       '';
     };
-  };
-}
+  }
