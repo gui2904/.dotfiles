@@ -33,7 +33,7 @@
         clover = lib.nixosSystem {
           specialArgs = {inherit system inputs;};
           modules = req-modules ++ home-module ++ [
-            ./hosts/clover/configuration.nix
+            ./hosts/clover
           ];
         };
       };
