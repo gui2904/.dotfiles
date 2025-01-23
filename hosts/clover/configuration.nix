@@ -126,6 +126,13 @@
     cmake
     libtool
     eza
+    vim
+    git
+    libglvnd
+    libwebp
+    hyprlang
+    hyprutils
+
     #emacsPackages.tree-sitter-langs
   ];  
 
