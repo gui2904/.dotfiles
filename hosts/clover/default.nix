@@ -91,6 +91,8 @@
 
   users.groups.clover = {};
 
+  # services.emacs.enable = true;
+
   #users.users.syncthing.extraGroups = [ "clover" ];
 
   # users.extraGroups.docker.members = [ "clover" ];
