@@ -1,6 +1,6 @@
 { lib, config, pkgs, ... }: let
   emacsDir = "${config.home.homeDirectory}/.config/emacs";
-  cfg = config.twig.programs.emacs;
+  cfg = config.clover.programs.emacs;
 in {
   options.clover.programs.emacs = {
     enable = lib.mkEnableOption "Enable Emacs";
