@@ -15,7 +15,7 @@ in {
 
     users.users.laptop = {
       isNormalUser = true;
-      #shell = pkgs.zsh;
+      shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
       extraGroups = ["wheel" "clover" "networkmanager"];
     };
