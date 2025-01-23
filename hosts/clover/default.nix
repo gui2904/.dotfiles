@@ -140,6 +140,7 @@
     hyprutils
     hyprgraphics
     aquamarine
+    hicolor-icon-theme
     hyprwayland-scanner
     #emacsPackages.tree-sitter-langs
   ];  
