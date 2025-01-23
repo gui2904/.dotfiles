@@ -25,8 +25,8 @@ in {
     };
 
     # Add Emacs package to the home environment if standalone is enabled
-    home.packages = lib.mkIf cfg.standalone.enable [
-      pkgs.emacs
-    ];
+    # home.packages = lib.mkIf cfg.standalone.enable [
+    #   pkgs.emacs
+    # ];
   };
 }
