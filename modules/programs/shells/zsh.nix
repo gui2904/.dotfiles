@@ -47,6 +47,9 @@ in {
         function parse_git_branch() {
           git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
         }
+        
+        export HYPRCURSOR_THEME="Bibata-Modern-Ice"
+        export HYPRCURSOR_SIZE=24
 
         autoload -U colors && colors
 
