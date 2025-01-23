@@ -25,6 +25,5 @@ in {
     home.packages = [
       (lib.mkIf
         cfg.standalone.enable)
-    };
   };
 }
