@@ -4,13 +4,12 @@
 in {
   options.clover.programs.emacs = {
     enable = lib.mkEnableOption "Enable Emacs";
-    # client.enable = lib.mkEnableOption "emacs client";  
     standalone.enable = lib.mkEnableOption "Enable Emacs Standalone";
   };
 
-  # Ensure enable is passed correctly as a boolean
+  # Ensure enable is treated as a boolean and only apply if enabled
   config = lib.mkIf cfg.enable {
-    programs.emacs = {#   enable = true;
+    programs.emacs = {
       enable = true;
       package = pkgs.emacs;  # Use the default Emacs package
       extraConfig = ''
@@ -19,13 +18,14 @@ in {
       '';
     };
 
-    # You may not need to enable `services.emacs` if you only want user-level Emacs configuration
+    # Optional: If you want Emacs as a service (disable if unnecessary)
     services.emacs = {
-      enable = false;  # Disable if you only want user-level config
+      enable = false;  # Disable as a system service if not needed
     };
-    home.packages = [
-      (lib.mkIf
-        cfg.standalone.enable)
+
+    # Add Emacs package to the home environment if standalone is enabled
+    home.packages = lib.mkIf cfg.standalone.enable [
+      pkgs.emacs
     ];
   };
 }
