@@ -9,7 +9,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    services.emacs = {
+    programs.emacs = {
       enable = true;
       package = pkgs.emacs;  # Use the default Emacs package
       client.enable = cfg.client.enable;
@@ -18,5 +18,12 @@ in {
         (load-file (concat user-emacs-directory "init.el"))
       '';
     };
+
+    services.emacs = {
+      enable = true;
+      client.enable = cfg.client.enable;
+      package = myEmacs;
+    };
+
   };
 }
