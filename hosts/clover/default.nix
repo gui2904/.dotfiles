@@ -91,7 +91,6 @@
 
   users.groups.clover = {};
 
-  # services.emacs.enable = true;
 
   #users.users.syncthing.extraGroups = [ "clover" ];
 
@@ -172,11 +171,11 @@
   services.gvfs.enable = true;
 
 
-  # # List services that you want to enable:
-  # services.emacs = {
-  #   enable = true;
-  #   package = pkgs.emacs;
-  # };
+  # List services that you want to enable:
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+  };
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;

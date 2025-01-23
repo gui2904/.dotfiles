@@ -20,10 +20,10 @@ in {
     };
 
     # Optional: If you want Emacs as a service (disable if unnecessary)
-    services.emacs = {
-      enable = true;  # Disable as a system service if not needed
-      package = pkgs.emacs;
-    };
+    # services.emacs = {
+    #   enable = true;  # Disable as a system service if not needed
+    #   package = pkgs.emacs;
+    # };
 
     # Add Emacs package to the home environment if standalone is enabled
     # home.packages = lib.mkIf cfg.standalone.enable [
