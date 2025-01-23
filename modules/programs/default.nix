@@ -1,7 +1,8 @@
 {...}: {
   imports = [
     ./emacs.nix
-    ./zsh.nix
+    #./zsh.nix
     ./rofi.nix
+    ./shells
   ];
 }

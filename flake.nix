@@ -16,7 +16,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      clover = lib.nixosSystem {
     inherit system;
     modules = [
           ./hosts/clover/configuration.nix
