@@ -97,6 +97,7 @@
 
   environment.systemPackages = with pkgs; [
     hyprland
+    gtk3
     syncthing
     rustup
     gcc
@@ -112,18 +113,37 @@
     libwebp
     hyprlang
     hyprutils
-
+    pavucontrol
+    pipewire
+    pkg-config
+    qt5.qtwayland
+    qt6.qmake
+    sddm
+    unzip 
+    waybar
+    wofi
+    jq
+    grim
+    slurp
+    wl-clipboard
+    libnotify
+    wayland
+    wayland-protocols
+    pango
+    cairo
+    file
+    libglvnd
+    libwebp
+    hyprlang
+    hyprutils
+    hyprwayland-scanner
     #emacsPackages.tree-sitter-langs
   ];  
-
-  # permissions for syncthing
-  systemd.tmpfiles.rules = [ "d /var/lib/syncthing 0777 syncthing syncthing" ];
 
   programs.hyprland.enable = true;
 
   programs.thunar.enable = true;
 
-  # hardware.bluetooth.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.droid-sans-mono
@@ -146,34 +166,15 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  # tor
-  #  services.tor = {
-  #  enable = false;
-  #  openFirewall = true;
-  #  relay = {
-  #    enable = true;
-  #    role = "relay";
-  #  };
-  #};
-
   # trash bin
-
   services.gvfs.enable = true;
 
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
+  # # List services that you want to enable:
+  # services.emacs = {
   #   enable = true;
-  #   enableSSHSupport = true;
+  #   package = pkgs.emacs;
   # };
-
-  # List services that you want to enable:
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs;
-  };
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;
