@@ -1,5 +1,5 @@
 {...}: {
-  imports = [
+  home-manager.sharedModules = [
     ./zsh.nix
   ];
 }
