@@ -97,7 +97,6 @@
   # users.extraGroups.docker.members = [ "clover" ];
 
   environment.systemPackages = with pkgs; [
-    hyprland
     gtk3
     syncthing
     rustup
