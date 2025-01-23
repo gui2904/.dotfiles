@@ -11,6 +11,7 @@ in {
   # Ensure enable is passed correctly as a boolean
   config = lib.mkIf cfg.enable {
     programs.emacs = {#   enable = true;
+      enable = true;
       package = pkgs.emacs;  # Use the default Emacs package
       extraConfig = ''
         (setq user-emacs-directory (expand-file-name "~/.config/emacs/"))
