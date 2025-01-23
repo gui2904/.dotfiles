@@ -11,15 +11,15 @@ in {
     enableLsColors = true;  # Directly enable LS colors for zsh
   };
 
-  # config = lib.mkIf cfg.enable {
-  #   home.packages = [
-  #     pkgs.nix-zsh-completions
-  #   ];
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.nix-zsh-completions
+    ];
 
-  # programs.carapace = lib.mkIf cfg.carapace.enable {
-  #   enable = lib.mkDefault true;
-  #   enableZshIntegration = true;
-  # };
+  programs.carapace = lib.mkIf cfg.carapace.enable {
+    enable = lib.mkDefault true;
+    enableZshIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;
