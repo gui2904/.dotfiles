@@ -6,7 +6,7 @@
   home.homeDirectory = "/home/clover";
 
   clover.programs = {
-    shells.zsh.enable = true;
+    zsh.enable = true;
     emacs.enable = true;
   };
 
