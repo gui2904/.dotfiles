@@ -8,6 +8,7 @@ in {
     standalone.enable = lib.mkEnableOption "Enable Emacs Standalone";
   };
 
+  # Ensure enable is passed correctly as a boolean
   config = lib.mkIf cfg.enable {
     programs.emacs = {
       enable = true;
@@ -18,10 +19,9 @@ in {
       '';
     };
 
+    # You may not need to enable `services.emacs` if you only want user-level Emacs configuration
     services.emacs = {
-      enable = true;
-      client.enable = cfg.client.enable;
+      enable = false;  # Disable if you only want user-level config
     };
-
   };
 }
