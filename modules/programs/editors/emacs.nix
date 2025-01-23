@@ -10,8 +10,7 @@ in {
 
   # Ensure enable is passed correctly as a boolean
   config = lib.mkIf cfg.enable {
-    programs.emacs = {
-      enable = true;
+    programs.emacs = {#   enable = true;
       package = pkgs.emacs;  # Use the default Emacs package
       extraConfig = ''
         (setq user-emacs-directory (expand-file-name "~/.config/emacs/"))
@@ -22,6 +21,10 @@ in {
     # You may not need to enable `services.emacs` if you only want user-level Emacs configuration
     services.emacs = {
       enable = false;  # Disable if you only want user-level config
+    };
+    home.packages = [
+      (lib.mkIf
+        cfg.standalone.enable)
     };
   };
 }
