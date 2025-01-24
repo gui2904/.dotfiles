@@ -129,6 +129,7 @@
     libglvnd
     libwebp
     rofi-wayland
+    gsettings-qt
 
     # hypr dependencies
 
