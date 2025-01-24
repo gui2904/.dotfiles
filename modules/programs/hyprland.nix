@@ -28,30 +28,30 @@ in {
           "XDG_CURRENT_DESKTOP,Hyprland"
         ];
         debug.disable_logs = false;
-      };
 
-      workspaces = [
-      ];
+        workspaces = [
+        ];
 
-      general = {
-        gaps_in = 4;
-        gaps_out = 2;
-        border_size = 2;
-      };
-
-      decoration = {
-        blur = {
-          enabled = false;
+        general = {
+          gaps_in = 4;
+          gaps_out = 2;
+          border_size = 2;
         };
-        animations.enabled = false;
-      };
 
-      input = {
-        kb_layoult = "us";
-        touchpad = {
-          natural_scroll = true;
+        decoration = {
+          blur = {
+            enabled = false;
+          };
+          animations.enabled = false;
         };
-      };
+
+        input = {
+          kb_layoult = "us";
+          touchpad = {
+            natural_scroll = true;
+          };
+        };
+       };
       "$mod" = "SUPER";
       bind = [
         "$mod, Return, exec, $terminal"
