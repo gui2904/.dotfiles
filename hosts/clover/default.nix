@@ -97,11 +97,6 @@
   # users.extraGroups.docker.members = [ "clover" ];
 
   environment.systemPackages = with pkgs; [
-    gtk3
-    syncthing
-    rustup
-    gcc
-    docker
     gnumake
     zip
     cmake
@@ -112,24 +107,12 @@
     libglvnd
     libwebp
     pavucontrol
-    pipewire
-    pkg-config
-    qt5.qtwayland
-    qt6.qmake
-    sddm
     unzip 
-    jq
     grim
     slurp
-    wl-clipboard
     libnotify
-    pango
-    cairo
-    file
     libglvnd
     libwebp
-    rofi-wayland
-    gsettings-qt
 
     # hypr dependencies
 
@@ -139,11 +122,9 @@
     hyprcursor
     hyprutils
     hyprgraphics
-    libnotify
     waybar
     dunst
     aquamarine
-    hicolor-icon-theme
     hyprwayland-scanner
     #emacsPackages.tree-sitter-langs
   ];  
