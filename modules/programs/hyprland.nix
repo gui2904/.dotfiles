@@ -16,7 +16,7 @@ in {
       enable = true;
       systemd.enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      xwayland.enable = true;
+      #xwayland.enable = true;
       settings = {
         "$terminal" = "${pkgs.foot}/bin/foot";
         #"$fileManager" = "${pkgs.thunar}/bin/thunar";

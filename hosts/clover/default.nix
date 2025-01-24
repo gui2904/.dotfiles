@@ -118,10 +118,10 @@
 
     # hypr dependencies
 
-    #wayland
+    wayland
     wayland-protocols
     hyprlang
-    hyprcursor
+    #hyprcursor
     hyprutils
     hyprgraphics
     waybar
