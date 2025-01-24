@@ -148,12 +148,6 @@
     #emacsPackages.tree-sitter-langs
   ];  
   
-  services.xserver = {
-    enable = true;
-    #displayManager.gdm.enable = true;
-    #desktopManager.gnome.enable = true;
-  };
-
   #programs.hyprland = {
   #  enable = true;
   #  xwayland.enable = true;
@@ -223,7 +217,7 @@
   #    pkgs.xdg-desktop-portal-gtk
   #  ];
   #};
-  xdg.portal.config.common.default = "*";
+  #xdg.portal.config.common.default = "*";
 
 
   # Open ports in the firewall.
