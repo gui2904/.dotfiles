@@ -98,7 +98,6 @@
 
   environment.systemPackages = with pkgs; [
     gtk3
-    hyprland
     syncthing
     rustup
     gcc
@@ -112,8 +111,6 @@
     git
     libglvnd
     libwebp
-    hyprlang
-    hyprutils
     pavucontrol
     pipewire
     pkg-config
@@ -121,24 +118,29 @@
     qt6.qmake
     sddm
     unzip 
-    waybar
-    wofi
     jq
     grim
     slurp
     wl-clipboard
     libnotify
-    wayland
-    wayland-protocols
     pango
     cairo
     file
     libglvnd
     libwebp
+    rofi-wayland
+
+    # hypr dependencies
+
+    wayland
+    wayland-protocols
     hyprlang
     hyprcursor
     hyprutils
     hyprgraphics
+    libnotify
+    waybar
+    dunst
     aquamarine
     hicolor-icon-theme
     hyprwayland-scanner
