@@ -92,7 +92,6 @@ in {
 	  "SUPER, P, pseudo, # dwindle"
 	  "SUPER, J, togglesplit, # dwindle"
         ];
-      };
      };
   };
 }
