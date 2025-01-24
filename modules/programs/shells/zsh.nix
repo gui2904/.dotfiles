@@ -49,10 +49,10 @@ in {
           git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
         }
         
-        export HYPRCURSOR_THEME="Bibata-Modern-Classic"
-        export HYPRCURSOR_SIZE=24
-        export XCURSOR_SIZE=24
-        export XCURSOR_THEME=Bibata-Modern-Classic
+        #export HYPRCURSOR_THEME="Bibata-Modern-Classic"
+        #export HYPRCURSOR_SIZE=24
+        #export XCURSOR_SIZE=24
+        #export XCURSOR_THEME=Bibata-Modern-Classic
 
 
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "

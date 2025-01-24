@@ -147,10 +147,10 @@
     #emacsPackages.tree-sitter-langs
   ];  
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  #programs.hyprland = {
+  #  enable = true;
+  #  xwayland.enable = true;
+  #};
 
   programs.thunar.enable = true;
 
