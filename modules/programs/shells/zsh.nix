@@ -52,6 +52,8 @@ in {
         export XDG_SESSION_TYPE=wayland
         export WAYLAND_DISPLAY=wayland-0
         export XDG_RUNTIME_DIR=/run/user/1001
+        export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
+        export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
 
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
