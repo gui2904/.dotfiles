@@ -28,66 +28,66 @@ in {
           "XDG_CURRENT_DESKTOP,Hyprland"
         ];
         debug.disable_logs = false;
+      };
 
-        workspaces = [
-        ];
+      workspaces = [
+      ];
 
-        general = {
-          gaps_in = 4;
-          gaps_out = 2;
-          border_size = 2;
+      general = {
+        gaps_in = 4;
+        gaps_out = 2;
+        border_size = 2;
+      };
+
+      decoration = {
+        blur = {
+          enabled = false;
+        };
+        animations.enabled = false;
+      };
+
+      input = {
+        kb_layoult = "us";
+        touchpad = {
+          natural_scroll = true;
+        };
+      };
+      "$mod" = "SUPER";
+      bind = [
+        "$mod, Return, exec, $terminal"
+        "$mod, E, exec, emacsclient -nc -a 'helix'"
+        "$mod, Q, killactive,"
+        "$mod, M, exit,"
+        "$mod, T, exec, $fileManager"
+        "$mod, F, togglefloating,"
+        "$mod, D, exec, $menu"
+        "$mod, P, pseudo, # dwindle"
+        "$mod, J, togglesplit, # dwindle"
+      ];
+
+      home.pointerCursor = {
+        gtk.enable = true;
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+        size = 19;
+      };
+
+      gtk = {
+        enable = true;
+
+        theme = {
+          package = pkgs.flat-remix-gtk;
+          name = "Flat-Remix-GTK-Grey-Darkest";
         };
 
-        decoration = {
-          blur = {
-            enabled = false;
-          };
-          animations.enabled = false;
+        iconTheme = {
+          package = pkgs.adwaita-icon-theme;
+          name = "Adwaita";
         };
 
-        input = {
-          kb_layoult = "us";
-          touchpad = {
-            natural_scroll = true;
-          };
-        };
-        "$mod" = "SUPER";
-        bind = [
-          "SUPER, Return, exec, $terminal"
-          "SUPER, E, exec, emacsclient -nc -a 'helix'"
-          "SUPER, Q, killactive,"
-          "SUPER, M, exit,"
-          "SUPER, T, exec, $fileManager"
-          "SUPER_SHIFT, F, togglefloating,"
-          "SUPER, D, exec, $menu"
-          "SUPER, P, pseudo, # dwindle"
-          "SUPER, J, togglesplit, # dwindle"
-        ];
-
-        home.pointerCursor = {
-          gtk.enable = true;
-          package = pkgs.bibata-cursors;
-          name = "Bibata-Modern-Classic";
-          size = 19;
-        };
-
-        gtk = {
-          enable = true;
-
-          theme = {
-            package = pkgs.flat-remix-gtk;
-            name = "Flat-Remix-GTK-Grey-Darkest";
-          };
-
-          iconTheme = {
-            package = pkgs.adwaita-icon-theme;
-            name = "Adwaita";
-          };
-
-          font = {
-            name = "Sans";
-            size = 11;
-          };
+        font = {
+          name = "Sans";
+          size = 11;
         };
       };
     };
