@@ -113,6 +113,7 @@
     libnotify
     libglvnd
     libwebp
+    mesa
 
     # hypr dependencies
 

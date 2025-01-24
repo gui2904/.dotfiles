@@ -17,7 +17,7 @@ in {
       isNormalUser = true;
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
-      extraGroups = ["wheel" "clover" "networkmanager"];
+      extraGroups = ["wheel" "clover" "networkmanager" "input" "video"];
     };
   };
 }
