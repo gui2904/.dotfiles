@@ -6,23 +6,21 @@
   ...
 }: let
   cfg = config.clover.programs.hyprland;
-
 in {
   options.clover.programs.hyprland = {
     enable = lib.mkEnableOption "enable hyprland";
-  };  
-  
+  };
+
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       settings = {
-        
-	"$terminal" = "${pkgs.foot}/bin/foot";
-	#"$fileManager" = "${pkgs.thunar}/bin/thunar";
+        "$terminal" = "${pkgs.foot}/bin/foot";
+        #"$fileManager" = "${pkgs.thunar}/bin/thunar";
         #"$editor" = "${pkgs.emacs}/bin/emacsclient -c -a emacs";
-	#"$menu" = "${pkgs.rofi}/bin/kill rofi || rofi -show drun -modi drun,filebrowser,run,window";
+        #"$menu" = "${pkgs.rofi}/bin/kill rofi || rofi -show drun -modi drun,filebrowser,run,window";
 
         env = [
           "term, $term"
@@ -30,9 +28,8 @@ in {
           "XDG_CURRENT_DESKTOP,Hyprland"
         ];
         debug.disable_logs = false;
-        
+
         workspaces = [
-          
         ];
 
         general = {
@@ -56,43 +53,43 @@ in {
         };
         "$mod" = "SUPER";
         bind = [
-	  "SUPER, Return, exec, $terminal"
-	  "SUPER, E, exec, emacsclient -nc -a 'helix'"
-	  "SUPER, Q, killactive,"
-	  "SUPER, M, exit,"
-	  "SUPER, T, exec, $fileManager"
-	  "SUPER_SHIFT, F, togglefloating,"
-	  "SUPER, D, exec, $menu"
-	  "SUPER, P, pseudo, # dwindle"
-	  "SUPER, J, togglesplit, # dwindle"
+          "SUPER, Return, exec, $terminal"
+          "SUPER, E, exec, emacsclient -nc -a 'helix'"
+          "SUPER, Q, killactive,"
+          "SUPER, M, exit,"
+          "SUPER, T, exec, $fileManager"
+          "SUPER_SHIFT, F, togglefloating,"
+          "SUPER, D, exec, $menu"
+          "SUPER, P, pseudo, # dwindle"
+          "SUPER, J, togglesplit, # dwindle"
         ];
- 
-    home.pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 19;
-    };
 
+        home.pointerCursor = {
+          gtk.enable = true;
+          package = pkgs.bibata-cursors;
+          name = "Bibata-Modern-Classic";
+          size = 19;
+        };
 
-    gtk = {
-      enable = true;
-          
-      theme = {
-        package = pkgs.flat-remix-gtk;
-        name = "Flat-Remix-GTK-Grey-Darkest";
-      };
+        gtk = {
+          enable = true;
 
-      iconTheme = {
-        package = pkgs.adwaita-icon-theme;
-        name = "Adwaita";
-      };
+          theme = {
+            package = pkgs.flat-remix-gtk;
+            name = "Flat-Remix-GTK-Grey-Darkest";
+          };
 
-      font = {
-        name = "Sans";
-        size = 11;
+          iconTheme = {
+            package = pkgs.adwaita-icon-theme;
+            name = "Adwaita";
+          };
+
+          font = {
+            name = "Sans";
+            size = 11;
+          };
+        };
       };
     };
   };
- };
 }
