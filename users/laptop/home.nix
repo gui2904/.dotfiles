@@ -16,6 +16,8 @@
         client.enable = true;
         standalone.enable = true;
       };
+
+      hyprland.enable = true;
     };
   };
 

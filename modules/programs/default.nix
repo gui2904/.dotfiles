@@ -3,5 +3,6 @@
     ./rofi.nix
     ./shells
     ./editors
+    ./hyprland.nix
   ];
 }
