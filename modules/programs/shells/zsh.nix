@@ -54,6 +54,7 @@ in {
         export XDG_RUNTIME_DIR=/run/user/1001
         export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
         export XDG_RUNTIME_DIR=/run/user/$(id -u)
+        export HYPRCURSOR_SIZE=19
 
 
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
