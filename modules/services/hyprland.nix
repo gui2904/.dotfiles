@@ -9,7 +9,6 @@ in {
   config = lib.mkIf cfg.enable {
     systemd.user.services.hyprland = {
       serviceConfig.ExecStart = "${pkgs.hyprland}/bin/hyprland";
-      wantedBy = [ "default.target" ];
     };
   };
 }
