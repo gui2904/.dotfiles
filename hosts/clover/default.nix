@@ -200,6 +200,7 @@
   #};
   xdg.portal.config.common.default = "*";
 
+  services.xserver.enable = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

@@ -54,6 +54,7 @@ in {
         #export XCURSOR_SIZE=24
         #export XCURSOR_THEME=Bibata-Modern-Classic
         export DISPLAY=:0.0
+        export XDG_SESSION_TYPE=wayland
 
 
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
