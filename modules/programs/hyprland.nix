@@ -17,7 +17,6 @@ in {
       enable = true;
       systemd.enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    };
       settings = {
         
 	"$terminal" = "${pkgs.foot}/bin/foot";
