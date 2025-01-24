@@ -55,17 +55,17 @@ in {
             natural_scroll = true;
           };
         };
-        "$mainMod" = "SUPER";
+        #"$mainMod" = "SUPER";
         bind = [
-	  "$mainMod, Return, exec, $terminal"
-	  "$mainMod, E, exec, emacsclient -nc -a 'helix'"
-	  "$mainMod, Q, killactive,"
-	  "$mainMod, M, exit,"
-	  "$mainMod, T, exec, $fileManager"
-	  "$mainMod SHIFT, F, togglefloating,"
-	  "$mainMod, D, exec, $menu"
-	  "$mainMod, P, pseudo, # dwindle"
-	  "$mainMod, J, togglesplit, # dwindle"
+	  "SUPER, Return, exec, $terminal"
+	  "SUPER, E, exec, emacsclient -nc -a 'helix'"
+	  "SUPER, Q, killactive,"
+	  "SUPER, M, exit,"
+	  "SUPER, T, exec, $fileManager"
+	  "SUPER_SHIFT, F, togglefloating,"
+	  "SUPER, D, exec, $menu"
+	  "SUPER, P, pseudo, # dwindle"
+	  "SUPER, J, togglesplit, # dwindle"
         ];
       };
   };
