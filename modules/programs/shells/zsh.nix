@@ -55,6 +55,8 @@ in {
         #export XCURSOR_THEME=Bibata-Modern-Classic
         export DISPLAY=:0.0
         export XDG_SESSION_TYPE=wayland
+        export WAYLAND_DISPLAY=wayland-0
+        export XDG_RUNTIME_DIR=/run/user/1001
 
 
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
