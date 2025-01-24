@@ -51,19 +51,19 @@ in {
             natural_scroll = true;
           };
         };
+        "$mod" = "SUPER";
+        bind = [
+          "$mod, Return, exec, $terminal"
+          "$mod, E, exec, emacsclient -nc -a 'helix'"
+          "$mod, Q, killactive,"
+          "$mod, M, exit,"
+          "$mod, T, exec, $fileManager"
+          "$mod, F, togglefloating,"
+          "$mod, D, exec, $menu"
+          "$mod, P, pseudo, # dwindle"
+          "$mod, J, togglesplit, # dwindle"
+        ];
        };
-      "$mod" = "SUPER";
-      bind = [
-        "$mod, Return, exec, $terminal"
-        "$mod, E, exec, emacsclient -nc -a 'helix'"
-        "$mod, Q, killactive,"
-        "$mod, M, exit,"
-        "$mod, T, exec, $fileManager"
-        "$mod, F, togglefloating,"
-        "$mod, D, exec, $menu"
-        "$mod, P, pseudo, # dwindle"
-        "$mod, J, togglesplit, # dwindle"
-      ];
 
       home.pointerCursor = {
         gtk.enable = true;
