@@ -49,10 +49,6 @@ in {
           git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
         }
         
-        #export HYPRCURSOR_THEME="Bibata-Modern-Classic"
-        #export HYPRCURSOR_SIZE=24
-        #export XCURSOR_SIZE=24
-        #export XCURSOR_THEME=Bibata-Modern-Classic
         export XDG_SESSION_TYPE=wayland
         export WAYLAND_DISPLAY=wayland-0
         export XDG_RUNTIME_DIR=/run/user/1001
