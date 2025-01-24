@@ -26,7 +26,7 @@ in {
         env = [
           "term, $term"
           "editor, $editor"
-          "XDG_CURRENT_DESKTOP,Hyprland"
+         # "XDG_CURRENT_DESKTOP,Hyprland"
           "HYPRCURSOR_SIZE=19"
         ];
         debug.disable_logs = false;
