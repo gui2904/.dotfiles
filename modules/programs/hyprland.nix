@@ -5,7 +5,7 @@
   inputs,
   ...
 }: let
-  cfg = config.clover.program.hyprland;
+  cfg = config.clover.programs.hyprland;
 
 in {
   options.clover.programs.hyprland = {
