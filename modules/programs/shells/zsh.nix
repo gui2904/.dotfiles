@@ -53,7 +53,6 @@ in {
         #export HYPRCURSOR_SIZE=24
         #export XCURSOR_SIZE=24
         #export XCURSOR_THEME=Bibata-Modern-Classic
-        export DISPLAY=:0.0
         export XDG_SESSION_TYPE=wayland
         export WAYLAND_DISPLAY=wayland-0
         export XDG_RUNTIME_DIR=/run/user/1001
