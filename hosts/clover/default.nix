@@ -130,6 +130,14 @@
     hyprwayland-scanner
     #emacsPackages.tree-sitter-langs
   ];  
+  environment.variables = {
+    "XDG_SESSION_TYPE" = "wayland"
+    "WAYLAND_DISPLAY" = "wayland-0"
+    "XDG_RUNTIME_DIR" = "/run/user/1001"
+    "DBUS_SESSION_BUS_ADDRESS" = "unix:path=/run/user/$(id -u)/bus"
+    "XDG_RUNTIME_DIR" = "/run/user/$(id -u)"
+    "HYPRCURSOR_SIZE" = "19"
+  };
 
   
  # programs.hyprland = {
