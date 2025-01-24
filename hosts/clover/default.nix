@@ -97,6 +97,7 @@
   # users.extraGroups.docker.members = [ "clover" ];
 
   environment.systemPackages = with pkgs; [
+    dconf
     gnumake
     zip
     cmake
