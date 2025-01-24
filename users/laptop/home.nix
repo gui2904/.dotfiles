@@ -29,5 +29,6 @@
     firefox
   ];
   
+  home-manager.backupFileExtension = ".bak";
   home.stateVersion = "24.05";
 }
