@@ -5,9 +5,10 @@ in {
   options = {
     clover.services.hyprland = { 
       enable = lib.mkEnableOption "hypr services"; 
-      type = lib.types.bool;
+      type = lib.mkOption {
+        description = "Enable Hyprland services";
+      };
       default = false;
-      description = "Enable Hyprland services";
     }; 
   };
 
