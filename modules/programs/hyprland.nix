@@ -54,7 +54,7 @@ in {
             natural_scroll = true;
           };
         };
-        #"$mainMod" = "SUPER";
+        "$mod" = "SUPER";
         bind = [
 	  "SUPER, Return, exec, $terminal"
 	  "SUPER, E, exec, emacsclient -nc -a 'helix'"
