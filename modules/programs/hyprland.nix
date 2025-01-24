@@ -67,5 +67,6 @@ in {
 	  "SUPER, J, togglesplit, # dwindle"
         ];
       };
+     };
   };
 }
