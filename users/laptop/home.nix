@@ -22,7 +22,6 @@
   };
   
   systemd.user.services.hyprland = {
-    description = "hyprland";
     serviceConfig.ExecStart = "${pkgs.hyprland}/bin/hyprland";
     wantedBy = [ "default.target" ];
   };
