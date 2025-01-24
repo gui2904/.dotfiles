@@ -20,6 +20,12 @@
       hyprland.enable = true;
     };
   };
+  
+  systemd.user.services.hyprland = {
+    description = "hyprland";
+    serviceConfig.ExecStart = "${pkgs.hyprland}/bin/hyprland";
+    wantedBy = [ "default.target" ];
+  };
 
   home.packages = with pkgs; [
     firefox
