@@ -13,10 +13,10 @@ in {
   };  
   
   config = lib.mkIf cfg.enable {
-    wayland.windowManager.hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    };
+    #wayland.windowManager.hyprland = {
+    #  enable = true;
+    #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    #};
 
     home.file."~/.config/hypr2/hyprland.conf" = {
       text = ''
