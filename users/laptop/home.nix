@@ -17,14 +17,10 @@
         standalone.enable = true;
       };
 
-      hyprland.enable = true;
+     # hyprland.enable = true;
     };
   };
   
-  systemd.user.services.hyprland = {
-    serviceConfig.ExecStart = "${pkgs.hyprland}/bin/hyprland";
-    wantedBy = [ "default.target" ];
-  };
 
   home.packages = with pkgs; [
     firefox
