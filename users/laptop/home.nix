@@ -19,6 +19,9 @@
 
      # hyprland.enable = true;
     };
+    services = {
+      hyprland.enable = true;
+    };
   };
   
 
