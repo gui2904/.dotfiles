@@ -201,6 +201,11 @@
   xdg.portal.config.common.default = "*";
 
   services.xserver.enable = false;
+  
+  environment.variables = {
+    WAYLAND_DISPLAY = "wayland-0";
+    XDG_RUNTIME_DIR = "/run/user/1001";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
