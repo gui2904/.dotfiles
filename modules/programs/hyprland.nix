@@ -52,9 +52,9 @@ in {
 
         };
 
-        animations.enable = false;
+        animations.enabled = false;
         input = {
-          kb_layoult = "us";
+          kb_layout = "us";
           touchpad = {
             natural_scroll = true;
           };
