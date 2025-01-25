@@ -18,7 +18,7 @@ in {
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       #xwayland.enable = true;
       settings = {
-        "$terminal" = "${pkgs.foot}/bin/foot";
+        "$term" = "${pkgs.foot}/bin/foot";
         #"$fileManager" = "${pkgs.thunar}/bin/thunar";
         #"$editor" = "${pkgs.emacs}/bin/emacsclient -c -a emacs";
         #"$menu" = "${pkgs.rofi}/bin/kill rofi || rofi -show drun -modi drun,filebrowser,run,window";
@@ -26,26 +26,32 @@ in {
         env = [
           "term, $term"
           "editor, $editor"
-         # "XDG_CURRENT_DESKTOP,Hyprland"
+          "XDG_CURRENT_DESKTOP,Hyprland"
           "HYPRCURSOR_SIZE=19"
         ];
         debug.disable_logs = false;
 
         workspaces = [
         ];
+        exec-once = [
+          "dbus-update-activation-environment --systemd --all"
+          "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        ];
 
         general = {
           gaps_in = 4;
           gaps_out = 2;
           border_size = 2;
+          layout = "dwindle";
         };
 
         decoration = {
+          rounding = 0;
           blur = {
             enabled = false;
           };
-          animations.enabled = false;
         };
+        animations.enable = false;
 
         input = {
           kb_layoult = "us";
