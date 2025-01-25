@@ -7,8 +7,9 @@
   cfg = config.clover.programs.zsh;
 in {
   options.clover.programs.zsh = {
-    enable = lib.mkEnableOption "zsh";
+    enable = lib.mkEnableOption "enable zsh";
     enableLsColors = true;  # Directly enable LS colors for zsh
+    carapace.enable = lib.mkEnableOption "carapace zsh integration";
   };
 
   config = lib.mkIf cfg.enable {
@@ -16,10 +17,10 @@ in {
       pkgs.nix-zsh-completions
     ];
 
-    # programs.carapace = lib.mkIf cfg.carapace.enable {
-    #   enable = lib.mkDefault true;
-    #   enableZshIntegration = true;
-    # };
+    programs.carapace = lib.mkIf cfg.carapace.enable {
+      enable = lib.mkDefault true;
+      enableZshIntegration = true;
+    };
 
     programs.zsh = {
       enable = true;
@@ -42,13 +43,11 @@ in {
 
       initExtra = ''
         zmodload zsh/complist
+        autoload -U colors && colors
 
         function parse_git_branch() {
           git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
         }
-
-        autoload -U colors && colors
-
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
       '';
     };

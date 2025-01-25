@@ -1,10 +1,13 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
+  imports = [ 
+    ./hardware-configuration.nix
+  ];
+
+  clover.users = {
+    laptop.enable = true;
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -40,7 +43,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  programs.zsh.enable = true;
+  #programs.zsh.enable = true;
 
   # users.users.clover = {
   #   isNormalUser = true;
@@ -88,16 +91,13 @@
 
   users.groups.clover = {};
 
+
   #users.users.syncthing.extraGroups = [ "clover" ];
 
   # users.extraGroups.docker.members = [ "clover" ];
 
   environment.systemPackages = with pkgs; [
-    hyprland
-    syncthing
-    rustup
-    gcc
-    docker
+    dconf
     gnumake
     zip
     cmake
@@ -107,20 +107,46 @@
     git
     libglvnd
     libwebp
-    hyprlang
-    hyprutils
+    pavucontrol
+    unzip 
+    grim
+    slurp
+    libnotify
+    libglvnd
+    libwebp
+    mesa
 
+    # hypr dependencies
+
+    wayland
+    wayland-protocols
+    hyprlang
+    #hyprcursor
+    hyprutils
+    hyprgraphics
+    waybar
+    dunst
+    aquamarine
+    hyprwayland-scanner
     #emacsPackages.tree-sitter-langs
   ];  
+  environment.variables = {
+    #"XDG_SESSION_TYPE" = "wayland";
+    #"WAYLAND_DISPLAY" = "wayland-0";
+    #"XDG_RUNTIME_DIR" = "/run/user/1001";
+   # "DBUS_SESSION_BUS_ADDRESS" = "unix:path=/run/user/$(id -u)/bus";
+   # "XDG_RUNTIME_DIR" = "/run/user/$(id -u)";
+   # "HYPRCURSOR_SIZE" = "19";
+  };
 
-  # permissions for syncthing
-  systemd.tmpfiles.rules = [ "d /var/lib/syncthing 0777 syncthing syncthing" ];
-
-  programs.hyprland.enable = true;
+  
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   programs.thunar.enable = true;
 
-  # hardware.bluetooth.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.droid-sans-mono
@@ -143,28 +169,9 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  # tor
-  #  services.tor = {
-  #  enable = false;
-  #  openFirewall = true;
-  #  relay = {
-  #    enable = true;
-  #    role = "relay";
-  #  };
-  #};
-
   # trash bin
-
   services.gvfs.enable = true;
 
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # List services that you want to enable:
   services.emacs = {
@@ -172,12 +179,6 @@
     package = pkgs.emacs;
   };
   services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
 
   #virtualisation.docker.enable = true;
   #virtualisation.docker.rootless = {
@@ -200,6 +201,20 @@
   fonts.fontDir.enable = true;
   fonts.fontconfig.enable = true;
 
+  xdg.portal = {
+    config.common.default = "hyprland;wlr;gtk";
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
+  };
+  
+  #environment.variables = {
+  #  WAYLAND_DISPLAY = "wayland-0";
+  #  XDG_RUNTIME_DIR = "/run/user/1001";
+  #;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

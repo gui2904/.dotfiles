@@ -4,20 +4,26 @@
   config,
   ...
 }: { 
-  home.username = "clover";
-  home.homeDirectory = "";
+  # home.username = "laptop";
+  # home.homeDirectory = "/home/laptop";
   
   clover = {
     programs = {
       zsh.enable = true;
 
-      emacs.enable = {
+      emacs = {
         enable = true;
         client.enable = true;
         standalone.enable = true;
       };
+
+      hyprland.enable = true;
     };
+   # services = {
+   #   hyprland.enable = true;
+   # };
   };
+  
 
   home.packages = with pkgs; [
     firefox

@@ -7,6 +7,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs: 
@@ -25,6 +27,7 @@
             extraSpecialArgs = {inherit inputs;};
             useGlobalPkgs = true;
             useUserPackages = true;
+            backupFileExtension = ".bak";
           };
         }
       ];
@@ -32,8 +35,8 @@
       nixosConfigurations = {
         clover = lib.nixosSystem {
           specialArgs = {inherit system inputs;};
-          modules = home-module ++ [
-            ./hosts/clover/configuration.nix
+          modules = req-modules ++ home-module ++ [
+            ./hosts/clover
           ];
         };
       };
