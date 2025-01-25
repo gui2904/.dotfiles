@@ -5,5 +5,6 @@
   ];
   imports = [
     ./nix.nix
+    ./local.nix
   ];
 }

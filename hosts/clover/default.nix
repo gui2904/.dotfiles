@@ -16,8 +16,6 @@
   networking.hostName = "clover"; 
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "America/New_York";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -95,31 +93,6 @@
     aquamarine
     hyprwayland-scanner
   ];  
-
-  # fonts = {
-  #   packages = with pkgs; [
-  #     nerd-fonts.droid-sans-mono
-  #     nerd-fonts.fira-code
-  #     fira-code
-  #     cantarell-fonts
-  #     jetbrains-mono
-  #     corefonts
-  #     vistafonts
-  #     noto-fonts
-  #     noto-fonts-cjk-sans
-  #     noto-fonts-emoji
-  #     liberation_ttf
-  #     font-awesome
-  #     dejavu_fonts
-  #     jost
-  #     inter
-  #     lmodern
-  #     roboto 
-  #     nerd-fonts.jetbrains-mono
-  #   ];
-  #   fontDir.enable = true;
-  #   fontconfig.enable = true;
-  # };
 
   xdg.portal = {
     config.common.default = "hyprland;wlr;gtk";
