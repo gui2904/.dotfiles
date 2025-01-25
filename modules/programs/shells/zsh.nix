@@ -8,7 +8,6 @@
 in {
   options.clover.programs.zsh = {
     enable = lib.mkEnableOption "enable zsh";
-    enableLsColors = true;  # Directly enable LS colors for zsh
     carapace.enable = lib.mkEnableOption "carapace zsh integration";
   };
 
@@ -32,6 +31,11 @@ in {
       shellAliases = {
         tree = "eza --tree --icons";
         emacs = "emacsclient -nc -a 'helix'";
+      };
+      sessionVariables = {
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#3E3E43,bg=black,bold,underline";
+        EDITOR = "nvim";
+
       };
 
       history = {

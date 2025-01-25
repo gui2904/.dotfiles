@@ -4,24 +4,21 @@
   config,
   ...
 }: { 
-  # home.username = "laptop";
-  # home.homeDirectory = "/home/laptop";
-  
   clover = {
     programs = {
-      zsh.enable = true;
-
-      emacs = {
+      zsh = {
         enable = true;
-        client.enable = true;
-        standalone.enable = true;
+        carapace.enable = true;
       };
+
+      #emacs = {
+      #  enable = true;
+      #  client.enable = true;
+      #  standalone.enable = true;
+      #};
 
       hyprland.enable = true;
     };
-   # services = {
-   #   hyprland.enable = true;
-   # };
   };
   
 
