@@ -131,18 +131,18 @@
     #emacsPackages.tree-sitter-langs
   ];  
   environment.variables = {
-    "XDG_SESSION_TYPE" = "wayland";
-    "WAYLAND_DISPLAY" = "wayland-0";
+    #"XDG_SESSION_TYPE" = "wayland";
+    #"WAYLAND_DISPLAY" = "wayland-0";
     #"XDG_RUNTIME_DIR" = "/run/user/1001";
-    "DBUS_SESSION_BUS_ADDRESS" = "unix:path=/run/user/$(id -u)/bus";
-    "XDG_RUNTIME_DIR" = "/run/user/$(id -u)";
-    "HYPRCURSOR_SIZE" = "19";
+   # "DBUS_SESSION_BUS_ADDRESS" = "unix:path=/run/user/$(id -u)/bus";
+   # "XDG_RUNTIME_DIR" = "/run/user/$(id -u)";
+   # "HYPRCURSOR_SIZE" = "19";
   };
 
   
   programs.hyprland = {
     enable = true;
- #   xwayland.enable = true;
+    xwayland.enable = true;
   };
 
   programs.thunar.enable = true;
@@ -201,15 +201,15 @@
   fonts.fontDir.enable = true;
   fonts.fontconfig.enable = true;
 
-  #xdg.portal = {
-  #  enable = true;
-  #  extraPortals = [
-  #    pkgs.xdg-desktop-portal-gtk
-  #  ];
-  #};
-  xdg.portal.config.common.default = "*";
-
-  services.xserver.enable = false;
+  xdg.portal = {
+    config.common.default = "hyprland;wlr;gtk";
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
+  };
   
   #environment.variables = {
   #  WAYLAND_DISPLAY = "wayland-0";
