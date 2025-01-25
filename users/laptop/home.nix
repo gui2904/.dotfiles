@@ -8,14 +8,8 @@
     programs = {
       zsh = {
         enable = true;
-        carapace.enable = true;
       };
 
-      #emacs = {
-      #  enable = true;
-      #  client.enable = true;
-      #  standalone.enable = true;
-      #};
 
       hyprland.enable = true;
     };
