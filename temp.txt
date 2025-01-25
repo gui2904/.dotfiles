@@ -1,0 +1,184 @@
+--------------------------------------------
+   Hyprland Crash Report
+--------------------------------------------
+*thud*
+
+Hyprland received signal 6(ABRT)
+Version: 4a1b960cbedb3e2893eeadecdf2b4a7314634306
+Tag: v0.46.0
+Date: 2025-01-24
+Flags:
+
+System info:
+	System name: Linux
+	Node name: clover
+	Release: 6.12.10
+	Version: #1-NixOS SMP PREEMPT_DYNAMIC Fri Jan 17 12:41:00 UTC 2025
+
+GPU:
+	00:02.0 VGA compatible controller [0300]: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller [8086:0416] (rev 06) (prog-if 00 [VGA controller])
+
+
+os-release:
+	ANSI_COLOR="0;38;2;126;186;228"
+	BUG_REPORT_URL="https://github.com/NixOS/nixpkgs/issues"
+	BUILD_ID="25.05.20250121.9e4d519"
+	CPE_NAME="cpe:/o:nixos:nixos:25.05"
+	DEFAULT_HOSTNAME=nixos
+	DOCUMENTATION_URL="https://nixos.org/learn.html"
+	HOME_URL="https://nixos.org/"
+	ID=nixos
+	ID_LIKE=""
+	IMAGE_ID=""
+	IMAGE_VERSION=""
+	LOGO="nix-snowflake"
+	NAME=NixOS
+	PRETTY_NAME="NixOS 25.05 (Warbler)"
+	SUPPORT_URL="https://nixos.org/community.html"
+	VARIANT=""
+	VARIANT_ID=""
+	VENDOR_NAME=NixOS
+	VENDOR_URL="https://nixos.org/"
+	VERSION="25.05 (Warbler)"
+	VERSION_CODENAME=warbler
+	VERSION_ID="25.05"
+Backtrace:
+	# | /etc/profiles/per-user/laptop/bin/Hyprland(_Z12getBacktracev+0x46) [0x720c36]
+		getBacktrace()
+		??:?
+	#1 | /etc/profiles/per-user/laptop/bin/Hyprland(_ZN14NCrashReporter18createAndSaveCrashEi+0xbe5) [0x640485]
+		NCrashReporter::createAndSaveCrash(int)
+		??:?
+	#2 | /etc/profiles/per-user/laptop/bin/Hyprland() [0x59847d]
+		handleUnrecoverableSignal(int)
+		??:?
+	#3 | /nix/store/h7zcxabfxa7v5xdna45y2hplj31ncf8a-glibc-2.40-36/lib/libc.so.6(+0x40a70) [0x7fc83d840a70]
+		??
+		??:0
+	#4 | /nix/store/h7zcxabfxa7v5xdna45y2hplj31ncf8a-glibc-2.40-36/lib/libc.so.6(+0x988ec) [0x7fc83d8988ec]
+		??
+		??:0
+	#5 | /nix/store/h7zcxabfxa7v5xdna45y2hplj31ncf8a-glibc-2.40-36/lib/libc.so.6(gsignal+0x16) [0x7fc83d8409c6]
+		??
+		??:0
+	#6 | /nix/store/h7zcxabfxa7v5xdna45y2hplj31ncf8a-glibc-2.40-36/lib/libc.so.6(abort+0xd7) [0x7fc83d828938]
+		??
+		??:0
+	#7 | /nix/store/ympvl87gx4f4pj66a3533g7zwp83bmhi-gcc-14-20241116-lib/lib/libstdc++.so.6(+0xadc3d) [0x7fc83dcadc3d]
+		??
+		??:0
+	#8 | /nix/store/ympvl87gx4f4pj66a3533g7zwp83bmhi-gcc-14-20241116-lib/lib/libstdc++.so.6(+0xbf20a) [0x7fc83dcbf20a]
+		??
+		??:0
+	#9 | /nix/store/ympvl87gx4f4pj66a3533g7zwp83bmhi-gcc-14-20241116-lib/lib/libstdc++.so.6(_ZSt10unexpectedv+0) [0x7fc83dcad7e9]
+		??
+		??:0
+	#1 | /nix/store/ympvl87gx4f4pj66a3533g7zwp83bmhi-gcc-14-20241116-lib/lib/libstdc++.so.6(+0xbf487) [0x7fc83dcbf487]
+		??
+		??:0
+	#11 | /nix/store/ympvl87gx4f4pj66a3533g7zwp83bmhi-gcc-14-20241116-lib/lib/libstdc++.so.6(+0xb561c) [0x7fc83dcb561c]
+		??
+		??:0
+	#12 | /etc/profiles/per-user/laptop/bin/Hyprland() [0x82cbc1]
+		auto CXCursorManager::themePaths(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(auto:1 const&)#1}::operator()<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
+		??:?
+	#13 | /etc/profiles/per-user/laptop/bin/Hyprland(_ZN15CXCursorManager10themePathsERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0xc3) [0x82f413]
+		CXCursorManager::themePaths(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+		??:?
+	#14 | /etc/profiles/per-user/laptop/bin/Hyprland(_ZN15CXCursorManager9loadThemeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEif+0x17a) [0x8309ba]
+		CXCursorManager::loadTheme(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int, float)
+		??:?
+	#15 | /etc/profiles/per-user/laptop/bin/Hyprland(_ZN14CCursorManagerC1Ev+0x2da) [0x7a0d0a]
+		CCursorManager::CCursorManager()
+		??:?
+	#16 | /etc/profiles/per-user/laptop/bin/Hyprland(_ZN11CCompositor12initManagersE18eManagersInitStage+0x577) [0x59beb7]
+		CCompositor::initManagers(eManagersInitStage)
+		??:?
+	#17 | /etc/profiles/per-user/laptop/bin/Hyprland(_ZN11CCompositor10initServerENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi+0x87c) [0x5b54dc]
+		CCompositor::initServer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int)
+		??:?
+	#18 | /etc/profiles/per-user/laptop/bin/Hyprland(main+0xd21) [0x78fd91]
+		main
+		??:?
+	#19 | /nix/store/h7zcxabfxa7v5xdna45y2hplj31ncf8a-glibc-2.40-36/lib/libc.so.6(+0x2a1fc) [0x7fc83d82a1fc]
+		??
+		??:0
+	#2 | /nix/store/h7zcxabfxa7v5xdna45y2hplj31ncf8a-glibc-2.40-36/lib/libc.so.6(__libc_start_main+0x89) [0x7fc83d82a2b9]
+		??
+		??:0
+	#21 | /etc/profiles/per-user/laptop/bin/Hyprland(_start+0x25) [0x550fe5]
+		_start
+		??:?
+
+
+Log tail:
+[LOG] [IWaylandProtocol] Registered global [CursorShape]
+[LOG] [IWaylandProtocol] Registered global [IdleInhibit]
+[LOG] [IWaylandProtocol] Registered global [RelativePointer]
+[LOG] [IWaylandProtocol] Registered global [XDGDecoration]
+[LOG] [IWaylandProtocol] Registered global [AlphaModifier]
+[LOG] [IWaylandProtocol] Registered global [GammaControl]
+[LOG] [IWaylandProtocol] Registered global [ForeignToplevel]
+[LOG] [IWaylandProtocol] Registered global [PointerGestures]
+[LOG] [IWaylandProtocol] Registered global [ForeignToplevelWlr]
+[LOG] [IWaylandProtocol] Registered global [ShortcutsInhibit]
+[LOG] [IWaylandProtocol] Registered global [TextInputV1]
+[LOG] [IWaylandProtocol] Registered global [TextInputV3]
+[LOG] [IWaylandProtocol] Registered global [PointerConstraints]
+[LOG] [IWaylandProtocol] Registered global [OutputPower]
+[LOG] [IWaylandProtocol] Registered global [XDGActivation]
+[LOG] [IWaylandProtocol] Registered global [IdleNotify]
+[LOG] [IWaylandProtocol] Registered global [IdleNotify]
+[LOG] [IWaylandProtocol] Registered global [SessionLock]
+[LOG] [IWaylandProtocol] Registered global [IMEv2]
+[LOG] [IWaylandProtocol] Registered global [VirtualKeyboard]
+[LOG] [IWaylandProtocol] Registered global [VirtualPointer]
+[LOG] [IWaylandProtocol] Registered global [OutputManagement]
+[LOG] [IWaylandProtocol] Registered global [ServerDecorationKDE]
+[LOG] [IWaylandProtocol] Registered global [FocusGrab]
+[LOG] [IWaylandProtocol] Registered global [TabletV2]
+[LOG] [IWaylandProtocol] Registered global [LayerShell]
+[LOG] [IWaylandProtocol] Registered global [Presentation]
+[LOG] [IWaylandProtocol] Registered global [XDGShell]
+[LOG] [IWaylandProtocol] Registered global [DataDeviceWlr]
+[LOG] [IWaylandProtocol] Registered global [PrimarySelection]
+[LOG] [IWaylandProtocol] Registered global [XWaylandShell]
+[LOG] [IWaylandProtocol] Registered global [Screencopy]
+[LOG] [IWaylandProtocol] Registered global [ToplevelExport]
+[LOG] [IWaylandProtocol] Registered global [GlobalShortcuts]
+[LOG] [IWaylandProtocol] Registered global [XDGDialog]
+[LOG] [IWaylandProtocol] Registered global [SinglePixel]
+[LOG] [IWaylandProtocol] Registered global [SecurityContext]
+[LOG] [IWaylandProtocol] Registered global [CTMControl]
+[LOG] [IWaylandProtocol] Registered global [HyprlandSurface]
+[LOG] [IWaylandProtocol] Registered global [DRMLease]
+[LOG] [IWaylandProtocol] Registered global [DRMSyncobj]
+[LOG] [IWaylandProtocol] Registered global [MesaDRM]
+[LOG] [IWaylandProtocol] Registered global [LinuxDMABUF]
+[LOG] Creating the SeatManager!
+[LOG] Creating CHyprCtl
+[LOG] Hypr socket started at /run/user/1001/hypr/4a1b960cbedb3e2893eeadecdf2b4a7314634306_1737794752_186595018/.socket.sock
+[LOG] Creating the InputManager!
+[LOG] Creating the HyprRenderer!
+[LOG] DRM driver information: i915 v1.6.0 from 0 description Intel Graphics
+[LOG] Creating the XWaylandManager!
+[LOG] Creating the SessionLockManager!
+[LOG] Creating the HyprDebugOverlay!
+[LOG] Creating the HyprNotificationOverlay!
+[LOG] Creating the PluginSystem!
+[LOG] Creating the DecorationPositioner!
+[LOG] Creating the CursorManager!
+[hc] CHyprcursorManager: attempting to find theme from env
+[hc] themeNameFromEnv: env unset
+[hc] CHyprcursorManager: attempting to find any theme
+[hc] getFirstTheme: found /home/laptop/.local/share/icons/Bibata-Original-Classic
+[hc] getFullPathForThemeName: found /home/laptop/.local/share/icons/Bibata-Original-Classic
+[hc] Found theme Bibata-Original-Classic at /home/laptop/.local/share/icons/Bibata-Original-Classic
+
+[LOG] XCursor scanning theme Bibata-Modern-Classic
+[LOG] XCursor using theme path /home/laptop/.icons/Bibata-Modern-Classic/cursors
+[LOG] XCursor parsing index.theme /home/laptop/.icons/Bibata-Modern-Classic/index.theme
+[LOG] XCursor theme Bibata-Modern-Classic inherits "hicolor"
+[LOG] XCursor using theme path /home/laptop/.local/share/icons/Bibata-Modern-Classic/cursors
+[LOG] XCursor parsing index.theme /home/laptop/.local/share/icons/Bibata-Modern-Classic/index.theme
+[LOG] XCursor theme Bibata-Modern-Classic inherits "hicolor"
