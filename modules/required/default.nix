@@ -3,6 +3,6 @@
     ./users
   ];
   imports = [
-    ./nix
+    ./nix.nix
   ];
 }
