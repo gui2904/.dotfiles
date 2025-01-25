@@ -8,18 +8,12 @@
 in {
   options.clover.programs.zsh = {
     enable = lib.mkEnableOption "enable zsh";
-    carapace.enable = lib.mkEnableOption "carapace zsh integration";
   };
 
   config = lib.mkIf cfg.enable {
     home.packages = [
       pkgs.nix-zsh-completions
     ];
-
-    programs.carapace = lib.mkIf cfg.carapace.enable {
-      enable = lib.mkDefault true;
-      enableZshIntegration = true;
-    };
 
     programs.zsh = {
       enable = true;
@@ -31,6 +25,7 @@ in {
       shellAliases = {
         tree = "eza --tree --icons";
         emacs = "emacsclient -nc -a 'helix'";
+        ls = "eza --icons";
       };
       sessionVariables = {
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#3E3E43,bg=black,bold,underline";
