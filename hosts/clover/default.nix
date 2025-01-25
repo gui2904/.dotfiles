@@ -21,7 +21,6 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  i18n.defaultLocale = "en_US.UTF-8";
 
   programs = {
     hyprland = {
@@ -112,7 +111,6 @@
 
   system.stateVersion = "24.05"; # Did you read the comment?
 
-  #nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 }
 

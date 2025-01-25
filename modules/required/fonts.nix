@@ -32,6 +32,5 @@ in {
       nerd-fonts.jetbrains-mono
     ];
     fonts.fontconfig.enable = true;
-    fonts.fontDir.enable = true;
   };
 }
