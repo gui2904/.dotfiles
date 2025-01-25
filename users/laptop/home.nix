@@ -13,7 +13,10 @@
 
       hyprland.enable = true;
     };
+
+    fonts.enable;
   };
+  
   
 
   home.packages = with pkgs; [

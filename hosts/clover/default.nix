@@ -30,9 +30,11 @@
       enable = true;
       xwayland.enable = true;
     };
+    foot = {
+      enable = true;
+      settings.main.font = "Fira Code:size=14";
+    };
 
-
-    foot.enable = true;
     thunar.enable = true;
   };
 
@@ -94,30 +96,30 @@
     hyprwayland-scanner
   ];  
 
-  fonts = {
-    packages = with pkgs; [
-      nerd-fonts.droid-sans-mono
-      nerd-fonts.fira-code
-      fira-code
-      cantarell-fonts
-      jetbrains-mono
-      corefonts
-      vistafonts
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      liberation_ttf
-      font-awesome
-      dejavu_fonts
-      jost
-      inter
-      lmodern
-      roboto 
-      nerd-fonts.jetbrains-mono
-    ];
-    fontDir.enable = true;
-    fontconfig.enable = true;
-  };
+  # fonts = {
+  #   packages = with pkgs; [
+  #     nerd-fonts.droid-sans-mono
+  #     nerd-fonts.fira-code
+  #     fira-code
+  #     cantarell-fonts
+  #     jetbrains-mono
+  #     corefonts
+  #     vistafonts
+  #     noto-fonts
+  #     noto-fonts-cjk-sans
+  #     noto-fonts-emoji
+  #     liberation_ttf
+  #     font-awesome
+  #     dejavu_fonts
+  #     jost
+  #     inter
+  #     lmodern
+  #     roboto 
+  #     nerd-fonts.jetbrains-mono
+  #   ];
+  #   fontDir.enable = true;
+  #   fontconfig.enable = true;
+  # };
 
   xdg.portal = {
     config.common.default = "hyprland;wlr;gtk";
