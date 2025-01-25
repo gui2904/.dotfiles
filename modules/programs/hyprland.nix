@@ -16,12 +16,11 @@ in {
       enable = true;
       systemd.enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      #xwayland.enable = true;
       settings = {
         "$term" = "${pkgs.foot}/bin/foot";
-        #"$fileManager" = "${pkgs.thunar}/bin/thunar";
-        #"$editor" = "${pkgs.emacs}/bin/emacsclient -c -a emacs";
-        #"$menu" = "${pkgs.rofi}/bin/kill rofi || rofi -show drun -modi drun,filebrowser,run,window";
+        "$fileManager" = "${pkgs.xfce.thunar}/bin/thunar";
+        "$editor" = "${pkgs.emacs}/bin/emacsclient -c -a emacs";
+        "$menu" = "${pkgs.rofi}/bin/kill rofi || rofi -show drun -modi drun,filebrowser,run,window";
 
         env = [
           "term, $term"
@@ -51,7 +50,7 @@ in {
             enabled = false;
           };
         };
-        animations.enable = false;
+      animations.enable = false;
 
         input = {
           kb_layoult = "us";
@@ -61,7 +60,7 @@ in {
         };
         "$mod" = "SUPER";
         bind = [
-          "$mod, Return, exec, $terminal"
+          "$mod, Return, exec, $term"
           "$mod, E, exec, emacsclient -nc -a 'helix'"
           "$mod, Q, killactive,"
           "$mod, M, exit,"
