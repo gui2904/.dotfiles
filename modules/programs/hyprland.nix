@@ -49,9 +49,10 @@ in {
           blur = {
             enabled = false;
           };
-        };
-      animations.enable = false;
 
+        };
+
+        animations.enable = false;
         input = {
           kb_layoult = "us";
           touchpad = {
