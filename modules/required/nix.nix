@@ -7,6 +7,7 @@
   nix = {
     settings = {
       trusted-users = ["@wheel" "root"];
+      experimental-features = ["nix-command" "flakes"];
     };
   };
 }

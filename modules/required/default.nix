@@ -1,9 +1,9 @@
 {...}: {
   home-manager.sharedModules = [
     ./users
+    ./fonts.nix
   ];
   imports = [
     ./nix.nix
-    ./fonts.nix
   ];
 }

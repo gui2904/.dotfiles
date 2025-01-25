@@ -14,7 +14,7 @@
       hyprland.enable = true;
     };
 
-    fonts.enable;
+    fonts.enable = true;
   };
   
   
