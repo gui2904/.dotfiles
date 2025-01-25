@@ -6,7 +6,7 @@
 }: let
   cfg = config.clover.fonts;
 in {
-  options.clover.fonts {
+  options.clover.fonts = {
     enable = lib.mkEnableOption "enable fonts";
   };
 
