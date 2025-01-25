@@ -25,79 +25,45 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Syncthing
-  services.syncthing.enable = false;
-  
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+
+
+    foot.enable = true;
+    thunar.enable = true;
   };
 
-  programs.foot.enable = true;
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+    emacs = {
+      enable = true;
+      package = pkgs.emacs;
+    };
 
-  #programs.zsh.enable = true;
+    locate = {
+      enable = true;
+      package = pkgs.plocate;
+      localuser = null;
+    };
 
-  # users.users.clover = {
-  #   isNormalUser = true;
-  #   shell = pkgs.zsh;
-  #   extraGroups = [ "wheel" "networkmanager" "syncthing" "docker" ];
-  #   packages = with pkgs; [
-  #     vim 
-  #     wget
-  #     emacs
-  #     firefox-wayland
-  #     git
-  #     gimp
-  #     gtk3
-  #     neofetch
-  #     mpv
-  #     pavucontrol
-  #     pipewire
-  #     pkg-config
-  #     qt5.qtwayland
-  #     qt6.qmake
-  #     sddm
-  #     unzip 
-  #     waybar
-  #     wofi
-  #     jq
-  #     grim
-  #     slurp
-  #     wl-clipboard
-  #     libnotify
-  #     wayland
-  #     wayland-protocols
-  #     pango
-  #     cairo
-  #     file
-  #     libglvnd
-  #     libwebp
-  #     hyprlang
-  #     hyprutils
-  #     syncthing
-  #     hyprwayland-scanner
-  #     tree-sitter
-  #     #python3.11-numpy
-  #   ];
-  # };
-
-  users.groups.clover = {};
-
-
-  #users.users.syncthing.extraGroups = [ "clover" ];
-
-  # users.extraGroups.docker.members = [ "clover" ];
+    dbus.enable = true;
+    openssh.enable = true;
+    gvfs.enable = true;
+    libinput.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     dconf
+    wget
     gnumake
     zip
     cmake
@@ -117,89 +83,41 @@
     mesa
 
     # hypr dependencies
-
     wayland
     wayland-protocols
     hyprlang
-    #hyprcursor
     hyprutils
     hyprgraphics
     waybar
     dunst
     aquamarine
     hyprwayland-scanner
-    #emacsPackages.tree-sitter-langs
   ];  
-  environment.variables = {
-    #"XDG_SESSION_TYPE" = "wayland";
-    #"WAYLAND_DISPLAY" = "wayland-0";
-    #"XDG_RUNTIME_DIR" = "/run/user/1001";
-   # "DBUS_SESSION_BUS_ADDRESS" = "unix:path=/run/user/$(id -u)/bus";
-   # "XDG_RUNTIME_DIR" = "/run/user/$(id -u)";
-   # "HYPRCURSOR_SIZE" = "19";
+
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.droid-sans-mono
+      nerd-fonts.fira-code
+      fira-code
+      cantarell-fonts
+      jetbrains-mono
+      corefonts
+      vistafonts
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      liberation_ttf
+      font-awesome
+      dejavu_fonts
+      jost
+      inter
+      lmodern
+      roboto 
+      nerd-fonts.jetbrains-mono
+    ];
+    fontDir.enable = true;
+    fontconfig.enable = true;
   };
-
-  
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  programs.thunar.enable = true;
-
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.droid-sans-mono
-    nerd-fonts.fira-code
-    fira-code
-    cantarell-fonts
-    jetbrains-mono
-    corefonts
-    vistafonts
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    liberation_ttf
-    font-awesome
-    dejavu_fonts
-    jost
-    inter
-    lmodern
-    roboto 
-    nerd-fonts.jetbrains-mono
-  ];
-
-  # trash bin
-  services.gvfs.enable = true;
-
-
-  # List services that you want to enable:
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs;
-  };
-  services.dbus.enable = true;
-
-  #virtualisation.docker.enable = true;
-  #virtualisation.docker.rootless = {
-  #  enable = true;
-  #  setSocketVariable = true;
-  #};
-	
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services.locate = {
-    enable = true;
-    package = pkgs.plocate;
-    localuser = null;
-  };
-
-  nixpkgs.config.allowUnfree = true;
-
-  # Fonts
-  fonts.fontDir.enable = true;
-  fonts.fontconfig.enable = true;
 
   xdg.portal = {
     config.common.default = "hyprland;wlr;gtk";
@@ -210,11 +128,6 @@
       pkgs.xdg-desktop-portal-hyprland
     ];
   };
-  
-  #environment.variables = {
-  #  WAYLAND_DISPLAY = "wayland-0";
-  #  XDG_RUNTIME_DIR = "/run/user/1001";
-  #;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -222,28 +135,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
