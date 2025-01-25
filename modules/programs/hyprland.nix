@@ -35,6 +35,7 @@ in {
         exec-once = [
           "dbus-update-activation-environment --systemd --all"
           "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+          "waybar"
         ];
 
         general = {
@@ -55,9 +56,6 @@ in {
         animations.enabled = false;
         input = {
           kb_layout = "us";
-          touchpad = {
-            natural_scroll = true;
-          };
         };
         "$mod" = "SUPER";
         bind = [
@@ -70,6 +68,10 @@ in {
           "$mod, D, exec, $menu"
           "$mod, P, pseudo, # dwindle"
           "$mod, J, togglesplit, # dwindle"
+        ];
+        bindm = [
+	  "$mod, mouse:272, movewindow"
+	  "$mod, mouse:273, resizewindow"
         ];
       };
     };
