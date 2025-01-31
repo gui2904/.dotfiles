@@ -39,6 +39,12 @@
             ./hosts/clover
           ];
         };
+        rasp = lib.nixosSystem {
+          specialArgs = {inherit system inputs;};
+          modules = req-modules ++ home-module ++ [
+            ./hosts/rasp
+          ];
+        };
       };
     };
 }
