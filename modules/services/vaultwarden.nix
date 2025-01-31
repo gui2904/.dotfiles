@@ -14,7 +14,7 @@ in {
     services.vaultwarden = {
       enable = true;
       dbBackend = "postgresql";
-      environmentFile = "~/.vaultwarden/.env";
+      environmentFile = "/home/server/.vaultwarden/.env";
       config = {
         SIGNUPS_ALLOWED = false;
       };
