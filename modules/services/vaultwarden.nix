@@ -12,7 +12,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    vaultwarden = {
+    services.vaultwarden = {
       enable = true;
     };
   };
