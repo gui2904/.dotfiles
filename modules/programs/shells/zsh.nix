@@ -1,4 +1,5 @@
 { 
+  
   config, 
   pkgs, 
   lib, 
@@ -29,7 +30,7 @@ in {
       };
       sessionVariables = {
         EDITOR = "vim";
-
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=white,bg=black,bold,underline";
       };
 
       history = {
@@ -40,7 +41,6 @@ in {
       };
 
       initExtra = ''
-        zmodload zsh/complist
         autoload -U colors && colors
 
         function parse_git_branch() {

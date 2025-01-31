@@ -1,5 +1,4 @@
 { lib, config, pkgs, inputs, ... }: let
-  emacsDir = "${config.home.homeDirectory}/.config/emacs";
   cfg = config.clover.programs.emacs;
 in {
   options.clover.programs.emacs = {
@@ -23,5 +22,4 @@ in {
       package = pkgs.emacs;
     };
   };
-  home.file = emacsDir;
 }
