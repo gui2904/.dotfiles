@@ -10,7 +10,6 @@
         enable = true;
       };
     };
-    services.vaultwarden.enable = true;
   };
 
   home.packages = with pkgs; [
