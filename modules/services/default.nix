@@ -1,5 +1,5 @@
 {...}: {
-  imports = [
+  home-manager.sharedModules = [
     ./vaultwarden.nix
   ];
 }
