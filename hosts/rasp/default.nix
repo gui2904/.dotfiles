@@ -28,11 +28,6 @@
 
   services = {
     openssh.enable = true; 
-    jellyfin = {
-      enable = true;
-      dataDir = "/home/server/jellyfin/data";
-      user = "server";
-    };  
   };
 
   # Open ports in the firewall.
