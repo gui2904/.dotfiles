@@ -1,25 +1,19 @@
-{ 
-  config, 
-  pkgs, 
-  lib, 
+{
+  config,
+  pkgs,
+  lib,
   inputs,
-  ... 
+  ...
 }: let
   cfg = config.clover.services.vaultwarden;
 in {
   options.clover.services.vaultwarden = {
-    enable = lib.mkEnableOption "Enable Vaultwarden service";
+    enable = lib.mkEnableOption "enable hyprland";
   };
 
   config = lib.mkIf cfg.enable {
-    services.vaultwarden = {
+    vaultwarden = {
       enable = true;
-      dbBackend = "postgresql";
-      environmentFile = "/home/server/.vaultwarden/.env";  # Full path without '~'
-      config = {
-        SIGNUPS_ALLOWED = false;
-      };
     };
   };
 }
-
