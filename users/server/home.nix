@@ -5,16 +5,13 @@
   ...
 }: {
   clover = {
-    services = {
-      vaultwarden = {
-        enable = true;  # This should work if the module is properly defined
-      };
-    };
-
     programs = {
       zsh = {
-        enable = true;  # This works as you expect
+        enable = true;
       };
+    };
+    services = {
+      vaultwarden.enable = true;
     };
   };
 
