@@ -42,11 +42,20 @@ in {
 
       initExtra = ''
         autoload -U colors && colors
+        autoload -Uz add-zsh-hook
+
+        # Movement bindings
+        bindkey -v
+        bindkey "^[[1;5C" forward-word
+        bindkey "^[[1;5D" backward-word
 
         function parse_git_branch() {
           git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
         }
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
+
+          source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+          source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       '';
     };
   };
