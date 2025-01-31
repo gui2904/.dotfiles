@@ -11,9 +11,7 @@
       };
     };
     services = {
-      vaultwarden = {
-        enable = true;
-      };
+      vaultwarden.enable = true;
     };
   };
 
