@@ -10,9 +10,7 @@
         enable = true;
       };
     };
-    services = {
-      vaultwarden.enable = true;
-    };
+    services = {};
   };
 
   home.packages = with pkgs; [
