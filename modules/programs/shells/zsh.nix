@@ -28,7 +28,6 @@ in {
         ls = "eza --icons";
       };
       sessionVariables = {
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#3E3E43,bg=black,bold,underline";
         EDITOR = "vim";
 
       };
