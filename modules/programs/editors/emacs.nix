@@ -1,4 +1,23 @@
-{ lib, config, pkgs, inputs, ... }: let
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}: let
+  myEmacs =
+    (pkgs.emacsPackagesFor
+      inputs.emacs-overlay.packages.${pkgs.system}.emacs-pgtk)
+      .emacsWithPackages
+      (epkgs:
+        (builtins.attrValues {
+          inherit
+            (epkgs.melpaPackages)
+            vterm
+          ;
+        })
+        ++ [epkgs.treesit-grammars.with-all-grammars]);
+  
   cfg = config.clover.programs.emacs;
 in {
   options.clover.programs.emacs = {
@@ -18,8 +37,9 @@ in {
     };
 
     services.emacs = {
-      enable = true;  # Disable as a system service if not needed
-      package = pkgs.emacs;
+      enable = true;  
+      client.enable = cfg.client.enable;
+      package = myEmacs;
     };
   };
 }
