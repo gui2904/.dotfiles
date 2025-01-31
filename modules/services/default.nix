@@ -1,5 +1,4 @@
 {...}: {
-  home-manager.sharedModules = [
-    ./jellyfin.nix
+  imports = [
   ];
 }
