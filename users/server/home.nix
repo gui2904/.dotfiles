@@ -3,24 +3,25 @@
   inputs,
   config,
   ...
-}: { 
+}: {
   clover = {
-    programs = {
-      zsh = {
-        enable = true;
+    services = {
+      vaultwarden = {
+        enable = true;  # This should work if the module is properly defined
       };
     };
-    services = {
-      vaultwarden.enable = true;
 
+    programs = {
+      zsh = {
+        enable = true;  # This works as you expect
+      };
     };
   };
 
   home.packages = with pkgs; [
     firefox
   ];
-  
+
   home.stateVersion = "24.05";
 }
-
 
