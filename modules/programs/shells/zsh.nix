@@ -54,7 +54,8 @@ in {
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
 
-        export=HYPRSHOT_DIR="~/Pictures/Screenshots/";
+        export HYPRSHOT_DIR="~/Pictures/Screenshots/"
+
       '';
     };
   };
