@@ -29,7 +29,7 @@ in {
       };
       sessionVariables = {
         EDITOR = "vim";
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=8,bg=white,bold,underline";
+        #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=180";
         HYPRSHOT_DIR = "~/Pictures/Screenshots";
       };
 
@@ -44,12 +44,6 @@ in {
         autoload -U colors && colors
         autoload -Uz add-zsh-hook
 
-        # Syntax highlighting custom color styles
-        ZSH_HIGHLIGHT_STYLES[command]='fg=green'
-        ZSH_HIGHLIGHT_STYLES[argument]='fg=yellow'
-        ZSH_HIGHLIGHT_STYLES[variable]='fg=cyan'
-        ZSH_HIGHLIGHT_STYLES[default]='fg=white'  # Adjust this to your preference
-
         # Movement bindings
         bindkey -v
         bindkey "^[[1;5C" forward-word
@@ -58,10 +52,10 @@ in {
         function parse_git_branch() {
           git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
         }
+
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
         PS1="%B%{$fg[red]%}[%{$fg[#A020F0]%}%n%{$fg[magenta]%}@%{$fg[magenta]%}%M %{$fg[#A020F0]%}%~%{$fg[#A020F0]%}$(parse_git_branch)%{$fg[reset]%}]%{$reset_color%}$%b "
 
-        #source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-        source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       '';
     };
   };
