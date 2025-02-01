@@ -29,7 +29,6 @@ in {
       };
       sessionVariables = {
         EDITOR = "vim";
-        #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=180";
         HYPRSHOT_DIR = "~/Pictures/Screenshots";
       };
 
