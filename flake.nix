@@ -1,5 +1,12 @@
 {
   description = "nixos config";
+ 
+  nixConfig = {
+    extra-substituters = [
+      "https://cache.nixos.org/"
+      "https://nix-community.cachix.org"
+    ];
+  };
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -9,6 +16,9 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+    };
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs: 

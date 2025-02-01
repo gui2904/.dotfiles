@@ -87,6 +87,7 @@
     hyprlang
     hyprutils
     hyprgraphics
+    hyprshot
     waybar
     dunst
     aquamarine

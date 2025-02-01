@@ -69,6 +69,10 @@ in {
           "$mod, P, pseudo, # dwindle"
           "$mod, J, togglesplit, # dwindle"
 
+          # Screenshots
+          "$mod, S, exec, hyprshot -m window"
+          "$mod SHIFT, S, exec, hyprshot -m region"
+
           # Window and workspaces
           "$mod, 1, workspace, 1"
           "$mod, 2, workspace, 2"
