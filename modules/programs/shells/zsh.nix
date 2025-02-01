@@ -29,7 +29,7 @@ in {
       };
       sessionVariables = {
         EDITOR = "vim";
-        HYPRSHOT_DIR = "~/Pictures/Screenshots";
+        HYPRSHOT_DIR = "~/Pictures/Screenshots/";
       };
 
       history = {
