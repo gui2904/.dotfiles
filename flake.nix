@@ -14,18 +14,6 @@
     ];
   };
 
-  inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland.url = "github:hyprwm/Hyprland";
-    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-    };
-  };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs: 
     let
@@ -63,4 +51,18 @@
         };
       };
     };
+  inputs = {
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland.url = "github:hyprwm/Hyprland";
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    # emacs-overlay = {
+    #   url = "github:nix-community/emacs-overlay";
+    # };
+  };
 }
