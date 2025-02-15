@@ -51,7 +51,6 @@
     locate = {
       enable = true;
       package = pkgs.plocate;
-      localuser = null;
     };
 
     dbus.enable = true;
