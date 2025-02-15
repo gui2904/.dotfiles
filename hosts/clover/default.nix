@@ -80,6 +80,8 @@
     libglvnd
     libwebp
     mesa
+    nodejs
+    mongodb-compass
 
     # hypr dependencies
     wayland
