@@ -26,11 +26,10 @@ in {
     client.enable = lib.mkEnableOption "emacs client";
   };
 
-  # Ensure enable is treated as a boolean and only apply if enabled
   config = lib.mkIf cfg.enable {
     programs.emacs = {
       enable = true;
-      package = myEmacs;  # Use the default Emacs package
+      package = myEmacs;
       extraConfig = ''
         (setq user-emacs-directory (expand-file-name "~/.config/emacs/"))
         (load-file (concat user-emacs-directory "init.el"))
