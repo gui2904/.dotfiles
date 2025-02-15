@@ -43,10 +43,10 @@
       pulse.enable = true;
     };
 
-    emacs = {
-      enable = true;
-      package = pkgs.emacs;
-    };
+    # emacs = {
+    #   enable = true;
+    #   package = pkgs.emacs;
+    # };
 
     locate = {
       enable = true;
@@ -78,7 +78,6 @@
     libnotify
     libglvnd
     libwebp
-    mesa
     nodejs
     mongodb-compass
 
