@@ -19,7 +19,7 @@ in {
       settings = {
         "$term" = "${pkgs.foot}/bin/foot";
         "$fileManager" = "${pkgs.xfce.thunar}/bin/thunar";
-        "$editor" = "${pkgs.emacs}/bin/emacsclient -c -a emacs";
+        "$editor" = "${pkgs.emacs}/bin/emacsclient -nc -a 'vim'";
         "$menu" = "${pkgs.rofi}/bin/kill rofi || rofi -show drun -modi drun,filebrowser,run,window";
 
         env = [

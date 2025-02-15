@@ -24,12 +24,12 @@ in {
       syntaxHighlighting.enable = true;
       shellAliases = {
         tree = "eza --tree --icons";
-        emacs = "emacsclient -nc -a 'helix'";
+        emacs = "emacsclient -nc -a 'vim'";
         ls = "eza --icons";
       };
-      sessionVariables = {
-        EDITOR = "vim";
-      };
+      # sessionVariables = {
+      #   EDITOR = "vim";
+      # };
 
       history = {
         expireDuplicatesFirst = true;
