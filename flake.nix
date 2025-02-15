@@ -59,7 +59,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     # emacs-overlay = {
     #   url = "github:nix-community/emacs-overlay";
