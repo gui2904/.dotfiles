@@ -9,16 +9,14 @@
       zsh = {
         enable = true;
       };
-      # emacs.enable = true;
+      emacs = {
+        enable = true;
+        client.enable = true;
+      };
       hyprland.enable = true;
     };
 
     fonts.enable = true;
-  };
-  
-  
-  services = {
-    emacs.enable = true;
   };
 
   home.packages = with pkgs; [
