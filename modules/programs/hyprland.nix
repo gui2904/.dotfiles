@@ -15,7 +15,7 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       settings = {
         "$term" = "${pkgs.foot}/bin/foot";
         "$fileManager" = "${pkgs.xfce.thunar}/bin/thunar";
