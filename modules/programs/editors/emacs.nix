@@ -15,9 +15,9 @@
             (epkgs.melpaPackages)
             vterm
             nix-mode
-          ;
+            ;
           inherit (epkgs.treesit-grammars) with-all-grammars;
-        })
+        }));
   
   cfg = config.clover.programs.emacs;
 in {
