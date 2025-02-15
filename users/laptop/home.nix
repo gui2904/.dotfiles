@@ -17,6 +17,9 @@
   };
   
   
+  services = {
+    emacs.enable = true;
+  };
 
   home.packages = with pkgs; [
     firefox
