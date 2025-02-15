@@ -29,7 +29,7 @@ in {
   config = lib.mkIf cfg.enable {
     programs.emacs = {
       enable = true;
-      package = pkgs.emacs;  # Use the default Emacs package
+      package = myEmacs;  # Use the default Emacs package
       extraConfig = ''
         (setq user-emacs-directory (expand-file-name "~/.config/emacs/"))
         (load-file (concat user-emacs-directory "init.el"))
