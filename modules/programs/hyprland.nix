@@ -60,7 +60,6 @@ in {
           kb_layout = "us";
 
           touchpad = {
-            natural_scroll = true;
             disable_while_typing = true;
 
             middle_button_emulation = true;
