@@ -31,6 +31,7 @@
     zip
     unzip 
     pavucontrol
+    brightnessctl
 
     libtool
     libglvnd
