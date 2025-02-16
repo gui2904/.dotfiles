@@ -47,7 +47,6 @@
     };
 
     dbus.enable = true;
-    libinput.enable = true;
     openssh.enable = true;
     gvfs.enable = true;
     libinput.enable = true;
@@ -56,8 +55,6 @@
   environment.systemPackages = with pkgs; [
     # dconf
     wget
-    gnumake
-    zip
     cmake
     libtool
     eza
@@ -67,12 +64,10 @@
     libwebp
     pavucontrol
     unzip 
-    grim
-    slurp
-    libnotify
     wireplumber
 
-    # hypr dependencies
+    # dependencies
+    # Hyprland
     wayland
     wayland-protocols
     hyprlang
@@ -83,6 +78,12 @@
     dunst
     aquamarine
     hyprwayland-scanner
+
+    # Hyprshot
+    jq
+    grim
+    slurp
+    wl-clipboard
   ];  
 
   xdg.portal = {

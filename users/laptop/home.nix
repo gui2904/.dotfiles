@@ -26,6 +26,8 @@
     xfce.thunar
     nodejs
     mongodb-compass
+    gnumake
+    zip
   ];
   
   home.stateVersion = "24.05";
