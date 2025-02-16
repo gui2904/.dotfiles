@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  config,
   ...
 }: { 
   clover = {
@@ -18,6 +17,9 @@
 
     fonts.enable = true;
   };
+
+  required = true;
+
 
   home.packages = with pkgs; [
     firefox
