@@ -78,7 +78,7 @@ in {
           "$mod, P, pseudo, # dwindle"
           "$mod, J, togglesplit, # dwindle"
 
-
+          # Brightnesss
           "XF86MonBrightnessUp, exec, brightnessctl set +10%"
           "XF86MonBrightnessDown, exec, brightnessctl set 10%-" 
 
