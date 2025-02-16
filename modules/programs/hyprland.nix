@@ -14,6 +14,7 @@ in {
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
+      xwayland.enable = true;
       systemd.enable = true;
       # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       settings = {
@@ -54,8 +55,17 @@ in {
         };
 
         animations.enabled = false;
+
         input = {
           kb_layout = "us";
+
+          touchpad = {
+            natural_scroll = true;
+            disable_while_typing = true;
+
+            middle_button_emulation = true;
+          };
+
         };
         "$mod" = "SUPER";
         bind = [
