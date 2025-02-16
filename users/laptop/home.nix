@@ -18,7 +18,6 @@
     fonts.enable = true;
   };
 
-  required = true;
 
 
   home.packages = with pkgs; [
