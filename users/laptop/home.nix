@@ -28,6 +28,14 @@
     mongodb-compass
     gnumake
     zip
+    unzip 
+    pavucontrol
+
+    libtool
+    libglvnd
+    libwebp
+
+    eza
   ];
   
   home.stateVersion = "24.05";

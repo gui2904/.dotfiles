@@ -54,16 +54,9 @@
 
   environment.systemPackages = with pkgs; [
     # dconf
-    wget
     cmake
-    libtool
-    eza
     vim
     git
-    libglvnd
-    libwebp
-    pavucontrol
-    unzip 
     wireplumber
 
     # dependencies
