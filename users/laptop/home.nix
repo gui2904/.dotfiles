@@ -23,6 +23,9 @@
     firefox
     python3
     kooha
+    xfce.thunar
+    nodejs
+    mongodb-compass
   ];
   
   home.stateVersion = "24.05";

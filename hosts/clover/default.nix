@@ -31,8 +31,6 @@
       enable = true;
       settings.main.font = "Fira Code:size=14";
     };
-
-    thunar.enable = true;
   };
 
   services = {
@@ -43,24 +41,20 @@
       pulse.enable = true;
     };
 
-    # emacs = {
-    #   enable = true;
-    #   package = pkgs.emacs;
-    # };
-
     locate = {
       enable = true;
       package = pkgs.plocate;
     };
 
     dbus.enable = true;
+    libinput.enable = true;
     openssh.enable = true;
     gvfs.enable = true;
     libinput.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
-    dconf
+    # dconf
     wget
     gnumake
     zip
@@ -76,10 +70,7 @@
     grim
     slurp
     libnotify
-    libglvnd
-    libwebp
-    nodejs
-    mongodb-compass
+    wireplumber
 
     # hypr dependencies
     wayland
