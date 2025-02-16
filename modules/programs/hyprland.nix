@@ -78,6 +78,10 @@ in {
           "$mod, P, pseudo, # dwindle"
           "$mod, J, togglesplit, # dwindle"
 
+
+          "XF86MonBrightnessUp, exec, brightnessctl set +10%"
+          "XF86MonBrightnessDown, exec, brightnessctl set 10%-" 
+
           # Screenshots
           "$mod, S, exec, hyprshot -m window"
           "$mod SHIFT, S, exec, hyprshot -m region"
