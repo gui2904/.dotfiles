@@ -22,7 +22,7 @@
   home.packages = with pkgs; [
     firefox
     python3
-    kooha
+    ffmpeg
     xfce.thunar
     nodejs
     mongodb-compass
