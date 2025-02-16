@@ -22,6 +22,7 @@
   home.packages = with pkgs; [
     firefox
     python3
+    kooha
   ];
   
   home.stateVersion = "24.05";
