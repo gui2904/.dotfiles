@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: let
   myEmacs =
@@ -27,6 +26,12 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    services.emacs = {
+      enable = true;  
+      client.enable = cfg.client.enable;
+      package = myEmacs;
+    };
+
     programs.emacs = {
       enable = true;
       package = myEmacs;
@@ -36,10 +41,5 @@ in {
       '';
     };
 
-    services.emacs = {
-      enable = true;  
-      client.enable = cfg.client.enable;
-      package = myEmacs;
-    };
   };
 }
