@@ -46,6 +46,8 @@ in {
         bindkey -v
         bindkey "^[[1;5C" forward-word
         bindkey "^[[1;5D" backward-word
+        bindkey "^A" beginning-of-line
+        bindkey "^E" end-of-line
 
         function parse_git_branch() {
           git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
