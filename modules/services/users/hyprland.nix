@@ -5,9 +5,9 @@
   inputs,
   ...
 }: let
-  cfg = config.clover.programs.hyprland;
+  cfg = config.clover.services.hyprland;
 in {
-  options.clover.programs.hyprland = {
+  options.clover.services.hyprland = {
     enable = lib.mkEnableOption "enable hyprland";
   };
 
