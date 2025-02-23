@@ -37,6 +37,7 @@
     pavucontrol
     brightnessctl
     wev
+    hyprpaper
 
     libtool
     libglvnd
