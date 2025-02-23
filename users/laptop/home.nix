@@ -16,7 +16,7 @@
 
     services = {
       hyprland.enable = true;
-      swaybg.enable = true;
+      hyprpaper.enable = true;
     };
 
     fonts.enable = true;
