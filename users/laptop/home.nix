@@ -12,6 +12,9 @@
         enable = true;
         client.enable = true;
       };
+      #hyprland.enable = true;
+    };
+    services = {
       hyprland.enable = true;
     };
 

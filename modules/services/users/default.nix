@@ -1,5 +1,5 @@
 {...}: {
-  imports = [
-    ./vaultwarden.nix
+  home-manager.sharedModules = [
+    ./hyprland.nix
   ];
 }

@@ -15,13 +15,6 @@
 
   networking.hostName = "clover"; 
   networking.networkmanager.enable = true;
-  networking.wireless.enable = true;
-  networking.wireless.networks = {
-    "martins 5GHz" = {
-      psk = "Martins152903#";
-    };
-  };
-
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
