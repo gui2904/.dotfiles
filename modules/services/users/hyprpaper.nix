@@ -21,7 +21,7 @@ in {
       enable = true;
       # package = inputs.hyprpaper.packages.${pkgs.system}.hyprpaper;
       settings = let
-        wallpaper = "${../wallpapers}/gangle-under-streetlight_Tumblr-ff.jpg";
+        wallpaper = "${../../../../../wallpapers}/gangle-under-streetlight_Tumblr-ff.jpg";
       in {
         preload = [
           wallpaper
