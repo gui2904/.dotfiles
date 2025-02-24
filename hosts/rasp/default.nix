@@ -24,7 +24,9 @@
     wget
     git
     eza
-    kitty-terminfo
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
   ];
 
   services = {
