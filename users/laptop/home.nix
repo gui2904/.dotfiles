@@ -42,6 +42,7 @@
     libglvnd
     libwebp
 
+    deluge
     eza
   ];
   
