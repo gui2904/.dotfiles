@@ -32,6 +32,7 @@
   services = {
     openssh.enable = true; 
     jellyfin.enable = true;
+    udisks2.enable = true;
   };
 
   # Open ports in the firewall.
