@@ -35,10 +35,10 @@
   };
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.allowedTCPPorts = [ 8096 8920 ];
+  networking.firewall.allowedTCPPortRanges = [ { from = 8096; to = 8096; } { from = 8920; to = 8920; } ];
+  networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
+
 
   system.stateVersion = "24.05"; # Did you read the comment?
 
