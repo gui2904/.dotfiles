@@ -12,6 +12,10 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.openvpn
+    ];
+
     services.openvpn.servers = {
       pia = {
         autoStart = true;

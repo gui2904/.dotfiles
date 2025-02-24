@@ -24,10 +24,12 @@
     wget
     git
     eza
+    kitty-terminfo
   ];
 
   services = {
     openssh.enable = true; 
+    jellyfin.enable = true;
   };
 
   # Open ports in the firewall.

@@ -13,7 +13,9 @@
   };
 
   home.packages = with pkgs; [
-    firefox
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
   ];
 
   home.stateVersion = "24.05";
