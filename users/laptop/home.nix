@@ -44,6 +44,7 @@
 
     deluge
     eza
+    postman
   ];
   
   home.stateVersion = "24.05";
