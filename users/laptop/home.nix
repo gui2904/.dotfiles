@@ -37,6 +37,7 @@
     brightnessctl
     wev
     hyprpaper
+    libreoffice
 
     libtool
     libglvnd

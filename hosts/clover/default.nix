@@ -76,6 +76,8 @@
     grim
     slurp
     wl-clipboard
+ 
+    mpv
   ];  
 
   xdg.portal = {

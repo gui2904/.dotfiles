@@ -27,6 +27,7 @@ in {
         tree = "eza --tree --icons";
         emacs = "emacsclient -nc -a 'vim'";
         ls = "eza --icons";
+        TERM = "xterm-kitty";
       };
       # sessionVariables = {
       #   EDITOR = "vim";
