@@ -38,6 +38,7 @@
     wev
     hyprpaper
     libreoffice
+    go
 
     libtool
     libglvnd
