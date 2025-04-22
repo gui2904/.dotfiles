@@ -27,10 +27,15 @@
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
+    pinentry-all
+    gnupg
   ];
 
   services = {
-    openssh.enable = true; 
+    openssh = {
+      enable = true;
+      settings.PrintLastLog = false;
+    }; 
     jellyfin.enable = true;
     udisks2.enable = true;
   };
