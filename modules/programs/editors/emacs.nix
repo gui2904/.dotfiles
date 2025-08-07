@@ -7,7 +7,7 @@
 }: let
   myEmacs =
     (pkgs.emacsPackagesFor
-      inputs.emacs-overlay.packages.${pkgs.system}.emacs-pgtk)
+      inputs.emacs-overlay.packages.${pkgs.system}.emacs-git-pgtk)
       .emacsWithPackages
       (epkgs:
         (builtins.attrValues {
