@@ -57,6 +57,7 @@
     vim
     git
     wireplumber
+    neofetch
 
     # dependencies
     # Hyprland
@@ -78,6 +79,7 @@
     wl-clipboard
  
     mpv
+    rustdesk
   ];  
 
   xdg.portal = {
