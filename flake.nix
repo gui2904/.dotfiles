@@ -62,8 +62,8 @@
     };
 
     # hyprland.url = "github:hyprwm/Hyprland";
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-    };
+    #emacs-overlay = {
+    #  url = "github:nix-community/emacs-overlay";
+    #};
   };
 }
