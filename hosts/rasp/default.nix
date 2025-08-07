@@ -32,10 +32,7 @@
   ];
 
   services = {
-    openssh = {
-      enable = true;
-      settings.PrintLastLog = false;
-    }; 
+    openssh.enable = true;
     jellyfin.enable = true;
     udisks2.enable = true;
   };
