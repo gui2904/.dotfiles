@@ -21,6 +21,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
 
+
   programs = {
     hyprland = {
       enable = true;
@@ -40,6 +41,10 @@
       pulse.enable = true;
     };
 
+    blueman = {
+      enable = true;
+    };
+
     locate = {
       enable = true;
       package = pkgs.plocate;
@@ -50,6 +55,8 @@
     gvfs.enable = true;
     libinput.enable = true;
   };
+ 
+  nixpkgs.overlays = [ inputs.polymc.overlay ];
 
   environment.systemPackages = with pkgs; [
     # dconf
@@ -77,10 +84,33 @@
     grim
     slurp
     wl-clipboard
- 
-    mpv
-    rustdesk
+    librewolf
+
+    jdk
+    polymc
   ];  
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        # Shows battery charge of connected devices on supported
+        # Bluetooth adapters. Defaults to 'false'.
+        Experimental = true;
+        # When enabled other devices can connect faster to us, however
+        # the tradeoff is increased power consumption. Defaults to
+        # 'false'.
+        FastConnectable = false;
+      };
+      Policy = {
+        # Enable all controllers when they are found. This includes
+        # adapters present on start as well as adapters that are plugged
+        # in later on. Defaults to 'true'.
+        AutoEnable = true;
+      };
+    };
+  };
 
   xdg.portal = {
     config.common.default = "hyprland;wlr;gtk";
@@ -92,11 +122,13 @@
     ];
   };
 
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  
 
   system.stateVersion = "24.05"; # Did you read the comment?
 

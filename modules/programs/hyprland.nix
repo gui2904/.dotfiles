@@ -60,7 +60,7 @@ in {
           kb_layout = "us";
 
           touchpad = {
-            disable_while_typing = true;
+            disable_while_typing = false;
 
             middle_button_emulation = true;
           };
@@ -70,10 +70,11 @@ in {
         bind = [
           "$mod, Return, exec, $term"
           "$mod, E, exec, emacsclient -nc -a 'helix'"
-          "$mod, Q, killactive,"
-          "$mod, M, exit,"
+          "$mod, Q, killactive"
+          "$mod, F, fullscreen"
+          "$mod, M, exit"
           "$mod, T, exec, $fileManager"
-          "$mod SHIFT, F, togglefloating,"
+          "$mod, SHIFT, F, togglefloating"
           "$mod, D, exec, $menu"
           "$mod, P, pseudo, # dwindle"
           "$mod, J, togglesplit, # dwindle"

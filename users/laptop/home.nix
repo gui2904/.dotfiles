@@ -6,10 +6,10 @@
   clover = {
     programs = {
       zsh.enable = true;
-      emacs = {
-        enable = true;
-        client.enable = true;
-      };
+      #emacs = {
+      #  enable = false;
+      #  client.enable = true;
+      #};
     };
 
     services = {
@@ -44,7 +44,6 @@
 
     deluge
     eza
-    postman
   ];
   
   home.stateVersion = "24.05";
