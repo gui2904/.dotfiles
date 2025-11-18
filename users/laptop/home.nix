@@ -14,6 +14,7 @@
 
     services = {
       hyprland.enable = true;
+      hyprpaper.enable = true;
     };
 
     fonts.enable = true;

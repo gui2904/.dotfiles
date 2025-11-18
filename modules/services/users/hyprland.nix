@@ -61,7 +61,7 @@ in {
           kb_layout = "us";
 
           touchpad = {
-            disable_while_typing = true;
+            disable_while_typing = false;
 
             middle_button_emulation = true;
           };
@@ -74,6 +74,7 @@ in {
           "$mod, Q, killactive,"
           "$mod, M, exit,"
           "$mod, T, exec, $fileManager"
+          "$mod, F, fullscreen"
           "$mod SHIFT, F, togglefloating,"
           "$mod, D, exec, $menu"
           "$mod, P, pseudo, # dwindle"

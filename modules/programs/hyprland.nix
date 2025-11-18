@@ -71,13 +71,13 @@ in {
           "$mod, Return, exec, $term"
           "$mod, E, exec, emacsclient -nc -a 'helix'"
           "$mod, Q, killactive"
-          "$mod, F, fullscreen"
           "$mod, M, exit"
           "$mod, T, exec, $fileManager"
           "$mod, SHIFT, F, togglefloating"
+          "$mod, F, fullscreen"
           "$mod, D, exec, $menu"
-          "$mod, P, pseudo, # dwindle"
-          "$mod, J, togglesplit, # dwindle"
+          "$mod, P, pseudo"
+          "$mod, J, togglesplit"
 
           # Brightnesss
           ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
@@ -113,8 +113,8 @@ in {
 
         ];
         bindm = [
-	        "$mod, mouse:272, movewindow"
-	        "$mod, mouse:273, resizewindow"
+	  "$mod, mouse:272, movewindow"
+	  "$mod, mouse:273, resizewindow"
         ];
       };
     };
