@@ -6,10 +6,10 @@
   clover = {
     programs = {
       zsh.enable = true;
-      #emacs = {
-      #  enable = false;
-      #  client.enable = true;
-      #};
+      emacs = {
+        enable = false;
+        client.enable = true;
+      };
     };
 
     services = {
