@@ -7,7 +7,7 @@
     programs = {
       zsh.enable = true;
       emacs = {
-        enable = false;
+        enable = true;
         client.enable = true;
       };
     };
