@@ -15,7 +15,6 @@
     services = {
       hyprland.enable = true;
       hyprpaper.enable = true;
-      iamb.enable = true;
     };
 
     fonts.enable = true;
@@ -39,6 +38,7 @@
     hyprpaper
     libreoffice
     go
+    iamb
 
     libtool
     libglvnd
