@@ -37,8 +37,9 @@ in {
       enable = true;
       package = myEmacs;
       extraConfig = ''
-        (setq user-emacs-directory (expand-file-name "~/.config/emacs/"))
-        (load-file (concat user-emacs-directory "init.el"))
+        (setq user-emacs-directory "~/.config/emacs/")
+	(setq inhibit-default-init t)
+	(load (expand-file-name "init.el" user-emacs-directory))
       '';
     };
 

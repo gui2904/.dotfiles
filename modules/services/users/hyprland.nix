@@ -76,7 +76,7 @@ in {
           "$mod, T, exec, $fileManager"
           "$mod, F, fullscreen"
           "$mod SHIFT, F, togglefloating,"
-          "$mod, D, exec, $menu"
+          "$mod, D, exec, ~/.config/rofi/launchers/type-2/launcher.sh || pkill rofi"
           "$mod, P, pseudo, # dwindle"
           "$mod, J, togglesplit, # dwindle"
 
