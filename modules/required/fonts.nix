@@ -12,25 +12,19 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      nerd-fonts.droid-sans-mono
+      #Monospace for coding
       nerd-fonts.fira-code
-      fira-code
+
+      #UI / system
       cantarell-fonts
-      jetbrains-mono
-      corefonts
-      vistafonts
       noto-fonts
-      noto-fonts-cjk-sans
+      roboto
+
+      # Emoji / icons
       noto-fonts-emoji
-      liberation_ttf
       font-awesome
-      dejavu_fonts
-      jost
-      inter
-      lmodern
-      roboto 
-      nerd-fonts.jetbrains-mono
     ];
+
     fonts.fontconfig.enable = true;
   };
 }
