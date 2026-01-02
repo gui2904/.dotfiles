@@ -31,16 +31,16 @@ in {
       enable = true;  
       client.enable = cfg.client.enable;
       package = myEmacs;
+ 
+      extraOptions = [
+        "--init-directory"
+        "${config.xdg.configHome}/emacs"
+      ];
     };
 
     programs.emacs = {
       enable = true;
       package = myEmacs;
-      extraConfig = ''
-        (setq user-emacs-directory "~/.config/emacs/")
-	(setq inhibit-default-init t)
-	(load (expand-file-name "init.el" user-emacs-directory))
-      '';
     };
 
   };
