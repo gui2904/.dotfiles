@@ -20,8 +20,6 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-
-
   programs = {
     hyprland = {
       enable = true;
@@ -31,6 +29,8 @@
       enable = true;
       settings.main.font = "Fira Code:size=14";
     };
+
+    dconf.enable = true;
   };
 
   services = {
@@ -54,6 +54,14 @@
     openssh.enable = true;
     gvfs.enable = true;
     libinput.enable = true;
+
+    tlp = {
+      enable = true;
+      settings = {
+        START_CHARGE_THRESH_BAT0 = 40;
+	STOP_CHARGE_THRESH_BAT0 = 80;
+      };
+    };
   };
  
   nixpkgs.overlays = [ inputs.polymc.overlay ];
