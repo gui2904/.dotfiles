@@ -12,17 +12,24 @@ in {
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      #Monospace for coding
+      nerd-fonts.droid-sans-mono
       nerd-fonts.fira-code
-
-      #UI / system
+      fira-code
       cantarell-fonts
+      jetbrains-mono
+      corefonts
+      vista-fonts
       noto-fonts
-      roboto
-
-      # Emoji / icons
-      noto-fonts-emoji
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+      liberation_ttf
       font-awesome
+      dejavu_fonts
+      jost
+      inter
+      lmodern
+      roboto 
+      nerd-fonts.jetbrains-mono
     ];
 
     fonts.fontconfig.enable = true;
