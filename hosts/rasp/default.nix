@@ -41,7 +41,6 @@
 
   services.udisks2.enable = true;
 
-  clover.services.vaultwarden.enable = true;
 
 
   powerManagement.cpuFreqGovernor = "powersave";
