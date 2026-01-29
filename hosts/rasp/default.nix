@@ -26,7 +26,6 @@
     eza
     pinentry-all
     gnupg
-    ssh
   ];
 
   services = {
