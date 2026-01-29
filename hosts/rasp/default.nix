@@ -24,22 +24,16 @@
     wget
     git
     eza
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
     pinentry-all
     gnupg
   ];
 
   services = {
     openssh.enable = true;
-    jellyfin.enable = true;
     udisks2.enable = true;
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8096 8920 ];
-  networking.firewall.allowedTCPPortRanges = [ { from = 8096; to = 8096; } { from = 8920; to = 8920; } ];
   networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
 
 
