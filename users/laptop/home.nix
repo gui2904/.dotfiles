@@ -26,7 +26,7 @@
     firefox
     python3
     ffmpeg
-    xfce.thunar
+    thunar
     nodejs
     mongodb-compass
     gnumake

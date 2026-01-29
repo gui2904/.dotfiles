@@ -74,6 +74,7 @@
     wireplumber
     neofetch
     neovim
+    kitty.terminfo
 
     # dependencies
     # Hyprland
