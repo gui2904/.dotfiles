@@ -43,12 +43,13 @@
 
   services.vaultwarden = {
     enable = true;
-    dbBackend = "postgresql";
-  # Store your variables like admin password here
-    environmentFile = "/home/server/vaultwarden/.env";
     config = {
-      SIGNUPS_ALLOWED = false;
-      DOMAIN = "https://vaultwarden.example.com";
+      ROCKET_ADDRESS = "0.0.0.0";
+      ROCKET_PORT = 8000;
+
+    # IMPORTANT: use the same URL you type in your browser
+      DOMAIN = "http://rasp:8000";      # or "http://rasp.local:8000"
+    # DOMAIN = "http://192.168.1.50:8000";  # safest if hostname resolution is flaky
     };
   };
 
