@@ -28,6 +28,7 @@ in {
         emacs = "emacsclient -nc -a 'vim'";
         ls = "eza --icons";
         TERM = "xterm-kitty";
+	nv = "nvim";
       };
       # sessionVariables = {
       #   EDITOR = "vim";
