@@ -41,6 +41,19 @@
 
   services.udisks2.enable = true;
 
+  services.vaultwarden = {
+    enable = true;
+
+    # Listen on LAN; if you reverse-proxy, you can keep 
+    config = {
+      ROCKET_ADDRESS = "0.0.0.0";
+      ROCKET_PORT = 8000;
+
+      # Recommended so you can create an admin token for /admin
+      # (Set this via env file ideally, see below)
+      # ADMIN_TOKEN = "....";
+    };
+  };
 
 
   powerManagement.cpuFreqGovernor = "powersave";

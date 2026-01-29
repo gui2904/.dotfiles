@@ -13,7 +13,6 @@
         enable = true;
       };
     };
-    services.vaultwarden.enable = true;
 
   };
 
