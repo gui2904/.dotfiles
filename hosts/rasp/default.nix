@@ -46,8 +46,8 @@
 
     # Listen on LAN; if you reverse-proxy, you can keep 
     config = {
-      ROCKET_ADDRESS = "0.0.0.0";
-      ROCKET_PORT = 8000;
+      ROCKET_ADDRESS = "127.0.0.1";
+      ROCKET_PORT = 8222;
 
       # Recommended so you can create an admin token for /admin
       # (Set this via env file ideally, see below)
