@@ -24,24 +24,31 @@
     wget
     git
     eza
-    pinentry-all
-    gnupg
   ];
 
   services = {
     openssh = { 
       enable = true;
-      openFirewall = true;
+      openFirewall = false;
       settings = {
-        PasswordAuthentication = true;
-        KbdInteractiveAuthentication = true;
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
       };
     };
     udisks2.enable = true;
   };
 
+  powerManagement.cpuFreqGovernor = "powersave";
+  services.journald.extraConfig = ''
+    SystemMaxUse=200M
+    RuntimeMaxUse=100M
+    MaxRetentionSec=7day
+  '';
+
+ 
+
   # Open ports in the firewall.
-  networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
+  #networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
   networking.firewall.allowedTCPPorts = [ 22 ];
 
 
