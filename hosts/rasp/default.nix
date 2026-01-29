@@ -43,15 +43,12 @@
 
   services.vaultwarden = {
     enable = true;
-
-    # Listen on LAN; if you reverse-proxy, you can keep 
+    dbBackend = "postgresql";
+  # Store your variables like admin password here
+    environmentFile = "/home/your-user/vaultwarden/.env";
     config = {
-      ROCKET_ADDRESS = "127.0.0.1";
-      ROCKET_PORT = 8222;
-
-      # Recommended so you can create an admin token for /admin
-      # (Set this via env file ideally, see below)
-      # ADMIN_TOKEN = "....";
+      SIGNUPS_ALLOWED = false;
+      DOMAIN = "https://vaultwarden.example.com";
     };
   };
 
@@ -67,7 +64,7 @@
 
   # Open ports in the firewall.
   #networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
-  networking.firewall.allowedTCPPorts = [ 22 8222 ]; #SSH and Vaultwarden
+  networking.firewall.allowedTCPPorts = [ 22 8222 8000 ]; #SSH and Vaultwarden
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
