@@ -42,15 +42,14 @@
   services.udisks2.enable = true;
 
   services.vaultwarden = {
-    enable = true;
-    config = {
-      ROCKET_ADDRESS = "0.0.0.0";
-      ROCKET_PORT = 8000;
+    DOMAIN = "https://bitwarden.example.com";
+    SIGNUPS_ALLOWED = false;
 
-    # IMPORTANT: use the same URL you type in your browser
-      DOMAIN = "http://rasp:8000";      # or "http://rasp.local:8000"
-    # DOMAIN = "http://192.168.1.50:8000";  # safest if hostname resolution is flaky
-    };
+  # Vaultwarden recommends running behind a reverse proxy, the configureNginx option can be used for that.
+    ROCKET_ADDRESS = "127.0.0.1";
+    ROCKET_PORT = 8222;
+
+    ROCKET_LOG = "critical";
   };
 
 
