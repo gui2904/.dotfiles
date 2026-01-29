@@ -26,12 +26,17 @@
     eza
     pinentry-all
     gnupg
+    ssh
   ];
 
   services = {
     openssh = { 
       enable = true;
       openFirewall = true;
+      settings = {
+        PasswordAuthentication = true;
+        KbdInteractiveAuthentication = true;
+      };
     };
     udisks2.enable = true;
   };
