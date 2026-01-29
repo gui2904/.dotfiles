@@ -9,8 +9,8 @@
     server.enable = true;
   };
 
-  boot.loader.grub.enable = false;
-  boot.loader.generic-extlinux-compatible.enable = true;
+  #boot.loader.grub.enable = false;
+  #boot.loader.generic-extlinux-compatible.enable = true;
 
   networking.hostName = "rasp"; 
   networking.networkmanager.enable = true;
