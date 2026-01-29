@@ -38,6 +38,7 @@
 
   # Open ports in the firewall.
   networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
+  networking.firewall.allowedTCPPorts = [ 22 ];
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
