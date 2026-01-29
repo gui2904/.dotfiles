@@ -45,7 +45,7 @@
     enable = true;
     dbBackend = "postgresql";
   # Store your variables like admin password here
-    environmentFile = "/home/your-user/vaultwarden/.env";
+    environmentFile = "/home/server/vaultwarden/.env";
     config = {
       SIGNUPS_ALLOWED = false;
       DOMAIN = "https://vaultwarden.example.com";
