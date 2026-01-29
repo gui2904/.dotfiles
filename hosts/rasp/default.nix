@@ -29,7 +29,10 @@
   ];
 
   services = {
-    openssh.enable = true;
+    openssh = { 
+      enable = true;
+      openFirewall = true;
+    };
     udisks2.enable = true;
   };
 
