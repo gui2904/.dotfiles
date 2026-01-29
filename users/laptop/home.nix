@@ -6,6 +6,7 @@
   clover = {
     programs = {
       zsh.enable = true;
+      hyprland.enable = true;
       emacs = {
         enable = true;
         client.enable = true;
@@ -13,7 +14,6 @@
     };
 
     services = {
-      hyprland.enable = true;
       hyprpaper.enable = true;
     };
 

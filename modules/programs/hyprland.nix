@@ -37,6 +37,7 @@ in {
           "dbus-update-activation-environment --systemd --all"
           "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
           "waybar"
+          "hyprpaper"
         ];
 
         general = {
@@ -70,14 +71,14 @@ in {
         bind = [
           "$mod, Return, exec, $term"
           "$mod, E, exec, emacsclient -nc -a 'helix'"
-          "$mod, Q, killactive"
-          "$mod, M, exit"
+          "$mod, Q, killactive,"
+          "$mod, M, exit,"
           "$mod, T, exec, $fileManager"
-          "$mod, SHIFT, F, togglefloating"
           "$mod, F, fullscreen"
-          "$mod, D, exec, $menu"
-          "$mod, P, pseudo"
-          "$mod, J, togglesplit"
+          "$mod SHIFT, F, togglefloating,"
+          "$mod, D, exec, ~/.config/rofi/launchers/type-2/launcher.sh || pkill rofi"
+          "$mod, P, pseudo, # dwindle"
+          "$mod, J, togglesplit, # dwindle"
 
           # Brightnesss
           ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
@@ -113,8 +114,8 @@ in {
 
         ];
         bindm = [
-	  "$mod, mouse:272, movewindow"
-	  "$mod, mouse:273, resizewindow"
+	        "$mod, mouse:272, movewindow"
+	        "$mod, mouse:273, resizewindow"
         ];
       };
     };

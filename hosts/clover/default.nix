@@ -1,6 +1,13 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
+  nix.settings.substituters = lib.mkBefore = [
+    "https://hyprland.cachix.org"
+  ];
+  nix.settings.trusted-public-keys = lib.mkBefore [
+    "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+  ];
+
   imports = [ 
     ./hardware-configuration.nix
   ];
