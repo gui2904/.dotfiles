@@ -31,10 +31,10 @@
   services = {
     openssh = { 
       enable = true;
-      openFirewall = true;
       settings = {
-        PasswordAuthentication = true;
-        KbdInteractiveAuthentication = true;
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        PubkeyAuthentication = true;
       };
     };
     udisks2.enable = true;
