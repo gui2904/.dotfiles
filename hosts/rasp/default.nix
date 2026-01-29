@@ -30,17 +30,19 @@
     eza
   ];
 
-  services = {
-    openssh = { 
-      enable = true;
-      openFirewall = false;
-      settings = {
-        PasswordAuthentication = false;
-        KbdInteractiveAuthentication = false;
-      };
+  services.openssh = {
+    enable = true;
+    openFirewall = false;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
     };
-    udisks2.enable = true;
   };
+
+  services.udisks2.enable = true;
+
+  clover.services.vaultwarden.enable = true;
+
 
   powerManagement.cpuFreqGovernor = "powersave";
   services.journald.extraConfig = ''
@@ -53,7 +55,7 @@
 
   # Open ports in the firewall.
   #networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [ 22 8000 ]; #SSH and Vaultwarden
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
