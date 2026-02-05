@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  nix.settings.substituters = lib.mkBefore = [
+  nix.settings.substituters = lib.mkBefore [
     "https://hyprland.cachix.org"
   ];
   nix.settings.trusted-public-keys = lib.mkBefore [
@@ -69,6 +69,7 @@
 	STOP_CHARGE_THRESH_BAT0 = 80;
       };
     };
+    syncthing.enable = true;
   };
  
   nixpkgs.overlays = [ inputs.polymc.overlay ];
