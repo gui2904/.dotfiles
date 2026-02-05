@@ -78,11 +78,26 @@
       };
     };
   };
+
+  services.forgejo = {
+    enable = true;
+    stateDir = "/var/lib/forgejo";
+
+    settings = {
+      server = {
+        DOMAIN = "localhost";
+        HTTP_PORT = 3000;
+        ROOT_URL = "http://localhost:3000/";
+      };
+
+      service.DISABLE_REGISTRATION = false;
+    };
+  };
  
 
   # Open ports in the firewall.
   #networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
-  networking.firewall.allowedTCPPorts = [ 22 ]; #SSH and Vaultwarden
+  networking.firewall.allowedTCPPorts = [ 22 3000 ]; #SSH and Vaultwarden
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
