@@ -102,7 +102,7 @@
       ROCKET_PORT = 8222;
 
       SIGNUPS_ALLOWED = false;
-      ROCKET_LOG = "normal";
+      ROCKET_LOG = "debug";
     };
   };
 
@@ -120,8 +120,6 @@
       };
     };
   };
-
-
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 80 3000 ]; #SSH and Vaultwarden
