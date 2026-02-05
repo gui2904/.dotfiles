@@ -56,7 +56,7 @@
     settings = {
       gui = {
         insecureAdminAccess = false;
-        allowedHosts = [
+        guiAllowedHosts = [
           "localhost"
           "localhost:18384"
           "syncthing-server.local"
