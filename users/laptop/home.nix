@@ -24,12 +24,10 @@
 
   home.packages = with pkgs; [
     firefox
-    python3
     ffmpeg
     thunar
     nodejs
     mongodb-compass
-    gnumake
     zip
     unzip 
     pavucontrol
@@ -46,6 +44,12 @@
 
     deluge
     eza
+ 
+    #Treesitter
+    gcc
+    gnumake
+    python3
+    clang
   ];
   
   home.stateVersion = "24.05";

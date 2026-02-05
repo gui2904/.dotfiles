@@ -80,10 +80,10 @@ in {
           "$mod, J, togglesplit, # dwindle"
  
           # Move Focus
-          "$mod SHIFT, H, movefocus, l"
-          "$mod SHIFT, L, movefocus, r"
-          "$mod SHIFT, K, movefocus, u"
-          "$mod SHIFT, J, movefocus, d"
+          "$mod, H, movefocus, l"
+          "$mod, L, movefocus, r"
+          "$mod, K, movefocus, u"
+          "$mod, J, movefocus, d"
 
           # Resize Windows
           "$mod SHIFT, H, resizeactive,-50 0"
