@@ -101,7 +101,7 @@
       ROCKET_PORT = 8222;
 
       # Use the URL you will actually type in your browser:
-      DOMAIN = "http://10.0.0.12";
+      DOMAIN = "http://rasp.local";
 
       SIGNUPS_ALLOWED = false;
       ROCKET_LOG = "normal";
