@@ -69,7 +69,20 @@
 	STOP_CHARGE_THRESH_BAT0 = 80;
       };
     };
-    syncthing.enable = true;
+  };
+ 
+  services.syncthing = {
+    enable = true;
+    user = "laptop";
+    dataDir = "/home/laptop";
+    configDir = "/home/laptop/.config/syncthing";
+
+    settings = {
+      devices = {
+        desktop.id = "CV7RPTY-3SPYLEK-T3SAMAM-EHNZJCW-CWRRXMH-LVFBZZF-CUNUKOK-OUOXGAA";
+        server.id = "5AAPDKC-OCEZFXM-WUHMOT4-DGCNL4C-3LZPUOS-IL4JVFJ-VPCNBWX-HLIEHAR";
+      };
+    };
   };
  
   nixpkgs.overlays = [ inputs.polymc.overlay ];
