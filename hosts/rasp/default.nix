@@ -52,9 +52,6 @@
     openDefaultPorts = true; 
     guiAddress = "127.0.0.1:8384";
 
-    extraFlags = [
-      "--gui-insecure-admin-access"
-    ];
 
     settings = {
       gui = {
