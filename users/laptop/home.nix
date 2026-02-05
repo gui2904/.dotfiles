@@ -49,7 +49,7 @@
     gcc
     gnumake
     python3
-    clang
+    pkg-config
   ];
   
   home.stateVersion = "24.05";
