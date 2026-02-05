@@ -43,19 +43,7 @@ in {
 
       initContent = ''
         [[ -o interactive ]] || return
-
-          center_art() {
-            local file="$1"
-            local cols="${COLUMNS:-$(tput cols)}"
-            while IFS= read -r line; do
-              local len=$#line
-              local pad=$(( (cols - len) / 2 ))
-              (( pad < 0 )) && pad=0
-              printf "%*s%s\n" "$pad" "" "$line"
-            done < "$file"
-          }
-
-          center_art ~/.config/branding/art.txt
+        cat ~/.config/branding/art.txt
 
 
         autoload -U colors && colors
