@@ -79,25 +79,35 @@
     };
   };
 
-  services.forgejo = {
+ # services.forgejo = {
+ #   enable = true;
+ #   stateDir = "/var/lib/forgejo";
+
+ #   settings = {
+ #     server = {
+ #       DOMAIN = "localhost";
+ #       HTTP_PORT = 3000;
+ #       ROOT_URL = "http://localhost:3000/";
+ #     };
+
+ #     service.DISABLE_REGISTRATION = false;
+ #   };
+ # };
+
+  services.vaultwarden = {
     enable = true;
-    stateDir = "/var/lib/forgejo";
 
-    settings = {
-      server = {
-        DOMAIN = "localhost";
-        HTTP_PORT = 3000;
-        ROOT_URL = "http://localhost:3000/";
-      };
-
-      service.DISABLE_REGISTRATION = false;
+    config = {
+      ROCKET_ADDRESS = "0.0.0.0";
+      ROCKET_PORT = 8222;
+      SIGNUPS_ALLOWED = false; # safer for personal server
     };
   };
  
 
   # Open ports in the firewall.
   #networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
-  networking.firewall.allowedTCPPorts = [ 22 3000 ]; #SSH and Vaultwarden
+  networking.firewall.allowedTCPPorts = [ 22 8222 ]; #SSH and Vaultwarden
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
