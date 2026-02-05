@@ -94,42 +94,10 @@
     };
   };
 
-  services.vaultwarden = {
-    enable = true;
-
-    config = {
-      DOMAIN = "http://10.0.0.12";
-      SIGNUPS_ALLOWED = false;
-
-      ROCKET_ADDRESS = "127.0.0.1";
-      ROCKET_PORT = 8222;
-
-      ROCKET_LOG = "normal";
-    };
-  };
-
-  services.nginx = {
-    enable = true;
-
-    virtualHosts."vault.localserver.com" = {
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:8222";
-        proxyWebsockets = true;
-
-        extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
-        '';
-      };
-    };
-  };
- 
 
   # Open ports in the firewall.
   #networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
-  networking.firewall.allowedTCPPorts = [ 22 80 3000 ]; #SSH and Vaultwarden
+  networking.firewall.allowedTCPPorts = [ 22 3000 ]; #SSH and Vaultwarden
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
