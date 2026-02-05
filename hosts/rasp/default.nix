@@ -48,7 +48,18 @@
     dataDir = "/home/server/Sync";
 
     openDefaultPorts = true; 
-    guiAddress = "0.0.0.0:8384";
+    guiAddress = "127.0.0.1:8384";
+
+    settings = {
+      devices = {
+        desktop.id = "CV7RPTY-3SPYLEK-T3SAMAM-EHNZJCW-CWRRXMH-LVFBZZF-CUNUKOK-OUOXGAA";
+      };
+
+      folders.notes = {
+        path = "/home/server/Sync/notes";
+        devices = [ "desktop" ];
+      };
+    };
   };
  
 
