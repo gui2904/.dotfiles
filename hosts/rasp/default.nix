@@ -51,6 +51,15 @@
     guiAddress = "127.0.0.1:8384";
 
     settings = {
+      gui = {
+        insecureAdminAccess = false;
+        allowedHosts = [
+          "localhost"
+          "syncthing-server.local"
+        ];
+      };
+
+
       devices = {
         desktop.id = "CV7RPTY-3SPYLEK-T3SAMAM-EHNZJCW-CWRRXMH-LVFBZZF-CUNUKOK-OUOXGAA";
       };
