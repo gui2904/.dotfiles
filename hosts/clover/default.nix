@@ -78,9 +78,16 @@
     configDir = "/home/laptop/.config/syncthing";
 
     settings = {
+      gui.insecureAdminAccess = false; 
+
       devices = {
         desktop.id = "CV7RPTY-3SPYLEK-T3SAMAM-EHNZJCW-CWRRXMH-LVFBZZF-CUNUKOK-OUOXGAA";
         server.id = "5AAPDKC-OCEZFXM-WUHMOT4-DGCNL4C-3LZPUOS-IL4JVFJ-VPCNBWX-HLIEHAR";
+      };
+
+      folders.notes = {
+        path = "/home/laptop/notes";
+        devices = [ "desktop" "server" ];
       };
     };
   };
