@@ -41,30 +41,20 @@
 
   services.udisks2.enable = true;
 
-  services.vaultwarden = {
-    DOMAIN = "https://bitwarden.example.com";
-    SIGNUPS_ALLOWED = false;
 
-  # Vaultwarden recommends running behind a reverse proxy, the configureNginx option can be used for that.
-    ROCKET_ADDRESS = "127.0.0.1";
-    ROCKET_PORT = 8222;
+  services.syncthing = {
+    enable = true;
+    user = "server";
+    dataDir = "/home/server/Sync";
 
-    ROCKET_LOG = "critical";
+    openDefaultPorts = true; 
+    guiAddress = "0.0.0.0:8384";
   };
-
-
-  powerManagement.cpuFreqGovernor = "powersave";
-  services.journald.extraConfig = ''
-    SystemMaxUse=200M
-    RuntimeMaxUse=100M
-    MaxRetentionSec=7day
-  '';
-
  
 
   # Open ports in the firewall.
   #networking.firewall.trustedInterfaces = [ "wlan0" ]; # replace with your LAN interface
-  networking.firewall.allowedTCPPorts = [ 22 8222 8000 ]; #SSH and Vaultwarden
+  networking.firewall.allowedTCPPorts = [ 22 8384 ]; #SSH and Vaultwarden
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
