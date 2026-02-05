@@ -125,6 +125,7 @@
 
     jdk
     polymc
+    tree-sitter
   ];  
 
   hardware.bluetooth = {
