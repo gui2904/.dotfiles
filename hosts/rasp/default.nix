@@ -100,7 +100,7 @@
     config = {
       ROCKET_ADDRESS = "127.0.0.1";
       ROCKET_PORT = 8222;
-      DOMAIN = "http://rasp.local";
+      DOMAIN = "http://passwords.mimas.internal.nobbz.dev";
 
       SIGNUPS_ALLOWED = false;
       ROCKET_LOG = "debug";
