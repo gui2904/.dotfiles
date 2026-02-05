@@ -41,18 +41,17 @@ in {
         ];
 
         general = {
-          gaps_in = 4;
+          gaps_in = 2;
           gaps_out = 2;
-          border_size = 2;
+          border_size = 1;
           layout = "dwindle";
         };
 
         decoration = {
-          rounding = 0;
+          rounding = 1;
           blur = {
             enabled = false;
           };
-
         };
 
         animations.enabled = false;
@@ -61,7 +60,7 @@ in {
           kb_layout = "us";
 
           touchpad = {
-            disable_while_typing = false;
+            disable_while_typing = true;
 
             middle_button_emulation = true;
           };
@@ -79,6 +78,30 @@ in {
           "$mod, D, exec, ~/.config/rofi/launchers/type-2/launcher.sh || pkill rofi"
           "$mod, P, pseudo, # dwindle"
           "$mod, J, togglesplit, # dwindle"
+ 
+          # Move Focus
+          "$mod SHIFT, H, movefocus, l"
+          "$mod SHIFT, L, movefocus, r"
+          "$mod SHIFT, K, movefocus, u"
+          "$mod SHIFT, J, movefocus, d"
+
+          # Resize Windows
+          "$mod SHIFT, H, resizeactive,-50 0"
+          "$mod SHIFT, L, resizeactive,50 0"
+          "$mod SHIFT, K, resizeactive,0 -50"
+          "$mod SHIFT, J, resizeactive,0 50"
+
+          # Move Windows
+          "$mod CTRL, H, movewindow, l"
+          "$mod CTRL, L, movewindow, r"
+          "$mod CTRL, K, movewindow, u"
+          "$mod CTRL, J, movewindow, d"
+
+          # Swap Windows
+          "$mod ALT, H, swapwindow, l"
+          "$mod ALT, L, swapwindow, r"
+          "$mod ALT, K, swapwindow, u"
+          "$mod ALT, J, swapwindow, d"
 
           # Brightnesss
           ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
@@ -87,6 +110,10 @@ in {
           # Screenshots
           "$mod, S, exec, hyprshot -m window"
           "$mod SHIFT, S, exec, hyprshot -m region"
+ 
+          # Zoom
+          "$mod, z, exec, hyprctl keyword cursor:zoom_factor 2.5"
+          "$mod, z, exec, hyprctl keyword cursor:zoom_factor 1.0"
 
           # Window and workspaces
           "$mod, 1, workspace, 1"
