@@ -98,8 +98,14 @@
     enable = true;
 
     config = {
-      ROCKET_ADDRESS = "0.0.0.0";
+      DOMAIN = "https://bitwarden.example.com";
+      SIGNUPS_ALLOWED = false;
+
+      # Vaultwarden recommends running behind a reverse proxy, the configureNginx option can be used for that.
+      ROCKET_ADDRESS = "127.0.0.1";
       ROCKET_PORT = 8222;
+
+      ROCKET_LOG = "critical";
     };
   };
  
