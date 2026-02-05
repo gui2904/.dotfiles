@@ -100,7 +100,7 @@
 
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 3000 ]; #SSH and Vaultwarden
+  networking.firewall.allowedTCPPorts = [ 22 3000 ]; #SSH and Vaultwarden
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
