@@ -95,32 +95,6 @@
     };
   };
 
-  services.vaultwarden = {
-    enable = true;
-    config = {
-      ROCKET_ADDRESS = "127.0.0.1";
-      ROCKET_PORT = 8222;
-      DOMAIN = "http://passwords.mimas.internal.nobbz.dev";
-
-      SIGNUPS_ALLOWED = false;
-      ROCKET_LOG = "debug";
-    };
-  };
-
-  services.nginx = {
-    enable = true;
-    recommendedProxySettings = true;
-
-    virtualHosts."vault" = {
-      default = true;
-      listen = [ { addr = "0.0.0.0"; port = 80; } ];
-
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:8222";
-        proxyWebsockets = true;
-      };
-    };
-  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 80 3000 ]; #SSH and Vaultwarden
