@@ -70,12 +70,15 @@
         desktop = {
           id = "CV7RPTY-3SPYLEK-T3SAMAM-EHNZJCW-CWRRXMH-LVFBZZF-CUNUKOK-OUOXGAA";
         };
+        laptop = {
+          id = "H3UN5LJ-M6E5SPJ-4SAYULE-2OSHIWL-Q53DSCD-3XLVPRT-56DOE5T-BBRYWQ2";
+        };
       };
 
 
       folders.notes = {
         path = "/home/server/Sync/notes";
-        devices = [ "desktop" ];
+        devices = [ "desktop" "laptop" ];
       };
     };
   };
