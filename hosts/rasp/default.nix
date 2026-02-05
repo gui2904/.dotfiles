@@ -63,8 +63,11 @@
 
 
       devices = {
-        desktop.id = "CV7RPTY-3SPYLEK-T3SAMAM-EHNZJCW-CWRRXMH-LVFBZZF-CUNUKOK-OUOXGAA";
+        desktop = {
+          id = "CV7RPTY-3SPYLEK-T3SAMAM-EHNZJCW-CWRRXMH-LVFBZZF-CUNUKOK-OUOXGAA";
+        };
       };
+
 
       folders.notes = {
         path = "/home/server/Sync/notes";
