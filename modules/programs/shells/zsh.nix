@@ -25,10 +25,10 @@ in {
       syntaxHighlighting.enable = true;
       shellAliases = {
         tree = "eza --tree --icons";
-        emacs = "emacsclient -nc -a 'vim'";
+        ec = "emacsclient -nc -a 'vim'";
+	      nv = "nvim";
         ls = "eza --icons";
         TERM = "xterm-kitty";
-	nv = "nvim";
       };
       # sessionVariables = {
       #   EDITOR = "vim";
@@ -42,19 +42,21 @@ in {
       };
 
       initContent = ''
- 	echo "
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢠⡾⠲⠶⣤⣀⣠⣤⣤⣤⡿⠛⠿⡴⠾⠛⢻⡆⠀⠀⠀
-⠀⠀⠀⣼⠁⠀⠀⠀⠉⠁⠀⢀⣿⠐⡿⣿⠿⣶⣤⣤⣷⡀⠀⠀
-⠀⠀⠀⢹⡶⠀⠀⠀⠀⠀⠀⠈⢯⣡⣿⣿⣀⣸⣿⣦⢓⡟⠀⠀
-⠀⠀⢀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠹⣍⣭⣾⠁⠀⠀
-⠀⣀⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣸⣷⣤⡀
-⠈⠉⠹⣏⡁⠀⢸⣿⠀⠀⠀⢀⡀⠀⠀⠀⣿⠆⠀⢀⣸⣇⣀⠀
-⠀⠐⠋⢻⣅⣄⢀⣀⣀⡀⠀⠯⠽⠂⢀⣀⣀⡀⠀⣤⣿⠀⠉⠀
-⠀⠀⠴⠛⠙⣳⠋⠉⠉⠙⣆⠀⠀⢰⡟⠉⠈⠙⢷⠟⠉⠙⠂⠀
-⠀⠀⠀⠀⠀⢻⣄⣠⣤⣴⠟⠛⠛⠛⢧⣤⣤⣀⡾⠁⠀⠀⠀⠀
+        [[ -o interactive ]] || return
 
-	"
+          center_art() {
+            local file="$1"
+            local cols="${COLUMNS:-$(tput cols)}"
+            while IFS= read -r line; do
+              local len=$#line
+              local pad=$(( (cols - len) / 2 ))
+              (( pad < 0 )) && pad=0
+              printf "%*s%s\n" "$pad" "" "$line"
+            done < "$file"
+          }
+
+          center_art ~/.config/branding/art.txt
+
 
         autoload -U colors && colors
         autoload -Uz add-zsh-hook

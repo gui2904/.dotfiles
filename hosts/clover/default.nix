@@ -34,7 +34,7 @@
     };
     foot = {
       enable = true;
-      settings.main.font = "Fira Code:size=12";
+      settings.main.font = "Fira Code:size=8";
     };
 
     dconf.enable = true;
