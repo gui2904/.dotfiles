@@ -55,7 +55,9 @@
         insecureAdminAccess = false;
         allowedHosts = [
           "localhost"
+          "localhost:18384"
           "syncthing-server.local"
+          "syncthing-server.local:18384"
         ];
       };
 
