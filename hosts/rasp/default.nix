@@ -45,6 +45,8 @@
   services.syncthing = {
     enable = true;
     user = "server";
+
+    configDir = "/home/server/.config/syncthing";
     dataDir = "/home/server/Sync";
 
     openDefaultPorts = true; 
