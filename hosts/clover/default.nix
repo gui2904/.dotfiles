@@ -22,6 +22,10 @@
 
   networking.hostName = "clover"; 
   networking.networkmanager.enable = true;
+  networking.extraHosts = ''
+    10.0.0.12 forgejo-server.lan
+    10.0.0.12 vaultwarden.lan
+  '';
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
