@@ -70,12 +70,15 @@
         desktop = {
           id = "CV7RPTY-3SPYLEK-T3SAMAM-EHNZJCW-CWRRXMH-LVFBZZF-CUNUKOK-OUOXGAA";
         };
+        laptop = {
+          id = "SDUJS5R-3OWRPE7-VFIOI4L-6FK4IIH-NZCS7TL-FMBNGET-NLHCZO5-H34GRAV";
+        };
       };
 
 
       folders.notes = {
         path = "/home/server/Sync/notes";
-        devices = [ "desktop" ];
+        devices = [ "desktop" "laptop" ];
       };
     };
   };
@@ -97,7 +100,7 @@
 
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 3000 ]; #SSH and Vaultwarden
+  networking.firewall.allowedTCPPorts = [ 22 3000 ]; #SSH and Vaultwarden
 
 
   system.stateVersion = "24.05"; # Did you read the comment?
