@@ -151,19 +151,11 @@ in {
 	        "$mod, mouse:272, movewindow"
 	        "$mod, mouse:273, resizewindow"
         ];
-        # bindl = [
-        #   # Zoom
-        #   "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 2.5"
-        # ];
-        # bindrl = [
-        #   # Zoom
-        #   "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 1"
-        # ];
       };
 
       extraConfig = ''
-        bindl = $mainMod, Z, exec,hyprctl keyword cursor:zoom_factor 2.5 
-        bindrl = $mainMod, Z, exec,hyprctl keyword cursor:zoom_factor 1
+        bindl = $mod, Z, exec,hyprctl keyword cursor:zoom_factor 2.5 
+        bindrl = $mod, Z, exec,hyprctl keyword cursor:zoom_factor 1
 
       '';
     };
