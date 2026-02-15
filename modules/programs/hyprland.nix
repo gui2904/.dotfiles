@@ -153,10 +153,10 @@ in {
         ];
       };
 
+      # Zoom
       extraConfig = ''
         bindl = $mod, Z, exec,hyprctl keyword cursor:zoom_factor 2.5 
         bindrl = $mod, Z, exec,hyprctl keyword cursor:zoom_factor 1
-
       '';
     };
     home.pointerCursor = {

@@ -95,6 +95,10 @@
       };
     };
   };
+
+
+  services.power-profiles-daemon.enable = true;
+  powerManagement.powertop.enable = true;
  
   # nixpkgs.overlays = [ inputs.polymc.overlay ];
 
