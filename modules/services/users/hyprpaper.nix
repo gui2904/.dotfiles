@@ -15,6 +15,7 @@ in {
     services.hyprpaper = {
       enable = true;
       settings = {
+        ipc = "on";
         preload = [
           "/home/laptop/Pictures/wallpapers/wallp.jpg"
         ];
