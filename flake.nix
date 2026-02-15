@@ -59,7 +59,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
-    polymc.url = "github:PolyMC/PolyMC";
+    #polymc.url = "github:PolyMC/PolyMC";
     
     home-manager = {
       url = "github:nix-community/home-manager";

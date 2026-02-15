@@ -96,7 +96,7 @@
     };
   };
  
-  nixpkgs.overlays = [ inputs.polymc.overlay ];
+  # nixpkgs.overlays = [ inputs.polymc.overlay ];
 
   environment.systemPackages = with pkgs; [
     # dconf
@@ -128,7 +128,7 @@
     wl-clipboard
 
     jdk
-    polymc
+    #polymc
     tree-sitter
   ];  
 
