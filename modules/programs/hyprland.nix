@@ -118,7 +118,7 @@ in {
  
           # Zoom
           "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 2.5"
-          # "$mod, z, exec, hyprctl keyword cursor:zoom_factor 1.0"
+          "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 1.0"
 
           # Window and workspaces
           "$mod, 1, workspace, 1"
