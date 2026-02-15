@@ -16,10 +16,10 @@ in {
       enable = true;
       settings = {
         preload = [
-          "/home/laptop/Pictures/wallpapers/wallhaven-rqq3gm_1920x1080.png"
+          "/home/laptop/Pictures/wallpapers/wallp.png"
         ];
         wallpaper = [
-          "eDP-1,/home/laptop/Pictures/wallpapers/wallhaven-rqq3gm_1920x1080.png"
+          "eDP-1,/home/laptop/Pictures/wallpapers/wallp.png"
         ];
       };
     }; 
