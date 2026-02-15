@@ -64,8 +64,12 @@ in {
 
             middle_button_emulation = true;
           };
-
         };
+
+        cursor = {
+          zoom_rigid = false;
+        };
+
         "$mod" = "SUPER";
         bind = [
           "$mod, Return, exec, $term"
