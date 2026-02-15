@@ -151,15 +151,21 @@ in {
 	        "$mod, mouse:272, movewindow"
 	        "$mod, mouse:273, resizewindow"
         ];
-        bindl = [
-          # Zoom
-          "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 2.5"
-        ];
-        bindrl = [
-          # Zoom
-          "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 1"
-        ];
+        # bindl = [
+        #   # Zoom
+        #   "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 2.5"
+        # ];
+        # bindrl = [
+        #   # Zoom
+        #   "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 1"
+        # ];
       };
+
+      extraConfig = ''
+        bindl = $mainMod, Z, exec,hyprctl keyword cursor:zoom_factor 2.5 
+        bindrl = $mainMod, Z, exec,hyprctl keyword cursor:zoom_factor 1
+
+      '';
     };
     home.pointerCursor = {
       gtk.enable = true;
