@@ -16,10 +16,10 @@ in {
       enable = true;
       settings = {
         preload = [
-          "/home/laptop/Pictures/wallpapers/wallp.png"
+          "/home/laptop/Pictures/wallpapers/wallp.jpg"
         ];
         wallpaper = [
-          "eDP-1,/home/laptop/Pictures/wallpapers/wallp.png"
+          "eDP-1,/home/laptop/Pictures/wallpapers/wallp.jpg"
         ];
       };
     }; 

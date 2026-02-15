@@ -56,6 +56,10 @@ in {
         bindkey "^A" beginning-of-line
         bindkey "^E" end-of-line
 
+
+        # Accept the full autosuggestion with Ctrl+F (vi insert mode + emacs map)
+        bindkey -M viins '^F' autosuggest-accept
+
         function parse_git_branch() {
           git branch 2>/dev/null | sed -n '/\*/s/\* \(.*\)/ (\1)/p'
         }
