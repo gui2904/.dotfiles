@@ -121,9 +121,6 @@ in {
           "$mod, S, exec, hyprshot -m window"
           "$mod SHIFT, S, exec, hyprshot -m region"
  
-          # Zoom
-          "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 2.5"
-          "$mod SHIFT, Z, exec, hyprctl keyword cursor:zoom_factor 1.0"
 
           # Window and workspaces
           "$mod, 1, workspace, 1"
@@ -153,6 +150,14 @@ in {
         bindm = [
 	        "$mod, mouse:272, movewindow"
 	        "$mod, mouse:273, resizewindow"
+        ];
+        bindl = [
+          # Zoom
+          "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 2.5"
+        ];
+        bindrl = [
+          # Zoom
+          "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 1"
         ];
       };
     };
