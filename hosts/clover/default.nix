@@ -70,7 +70,15 @@
       enable = true;
       settings = {
         START_CHARGE_THRESH_BAT0 = 40;
-	STOP_CHARGE_THRESH_BAT0 = 80;
+      	STOP_CHARGE_THRESH_BAT0 = 80;
+
+        # Better responsiveness
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
+
+        # Optional but often helps laptops avoid “hiccups”
+        # CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        # CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_performance";
       };
     };
   };
@@ -96,9 +104,6 @@
     };
   };
 
-
-  services.power-profiles-daemon.enable = true;
-  powerManagement.powertop.enable = true;
  
   # nixpkgs.overlays = [ inputs.polymc.overlay ];
 
