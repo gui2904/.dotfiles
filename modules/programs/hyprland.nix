@@ -67,7 +67,8 @@ in {
         };
 
         cursor = {
-          zoom_rigid = false;
+          zoom_rigid = true;
+          zoom_detached_camera = false;
         };
 
         "$mod" = "SUPER";
@@ -122,7 +123,7 @@ in {
  
           # Zoom
           "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 2.5"
-          "$mod, Z, exec, hyprctl keyword cursor:zoom_factor 1.0"
+          "$mod SHIFT, Z, exec, hyprctl keyword cursor:zoom_factor 1.0"
 
           # Window and workspaces
           "$mod, 1, workspace, 1"
