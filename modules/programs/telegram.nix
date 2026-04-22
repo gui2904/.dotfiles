@@ -12,6 +12,7 @@ in {
       pkgs.tor
       pkgs.telegram-desktop
       pkgs.netcat
+      pkgs.foot
     ];
 
     home.file.".local/bin/telegram-tor" = {
@@ -55,9 +56,17 @@ EOF
       '';
     };
 
+    home.file.".local/bin/telegram-tor-launcher" = {
+      executable = true;
+      text = ''
+        #!/usr/bin/env bash
+        exec ${pkgs.foot}/bin/foot -T "Telegram Tor Session" -a telegram-tor -e ${homeDir}/.local/bin/telegram-tor
+      '';
+    };
+
     xdg.desktopEntries.telegram-tor = {
       name = "Telegram (Tor)";
-      exec = "foot -T Telegram\\ Tor\\ Session -a telegram-tor -e ${homeDir}/.local/bin/telegram-tor";
+      exec = "${homeDir}/.local/bin/telegram-tor-launcher";
       icon = "telegram";
       terminal = false;
       categories = [ "Network" "Chat" "InstantMessaging" ];
