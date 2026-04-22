@@ -21,6 +21,7 @@ in {
         ];
         wallpaper = [
           "eDP-1,/home/laptop/Pictures/wallpapers/wallp.jpg"
+          ",/home/laptop/Pictures/wallpapers/wallp.jpg"
         ];
       };
     }; 
