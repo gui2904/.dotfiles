@@ -71,5 +71,11 @@ EOF
       terminal = false;
       categories = [ "Network" "Chat" "InstantMessaging" ];
     };
+     
+    xdg.desktopEntries."org.telegram.desktop" = {
+      name = "Telegram";
+      noDisplay = true;
+    };
+
   };
 }
