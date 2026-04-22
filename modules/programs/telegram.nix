@@ -70,7 +70,7 @@ EOF
 
     xdg.desktopEntries.telegram-tor = {
       name = "Telegram (Tor)";
-      exec = "foot -T 'Telegram Tor Session' -a telegram-tor -e $HOME/.local/bin/telegram-tor";
+      exec = "foot -T Telegram\\ Tor\\ Session -a telegram-tor -e /home/laptop/.local/bin/telegram-tor";
       icon = "telegram";
       terminal = false;
       categories = [ "Network" "Chat" "InstantMessaging" ];
