@@ -2,7 +2,7 @@
 let
   cfg = config.clover.programs.deskreen;
   homeDir = config.home.homeDirectory;
-  appImage = "${homeDir}/Apps/deskreen-ce-3.2.14-x86_64.AppImage";
+  appImage = "${homeDir}/Apps/appimages/deskreen-ce-3.2.14-x86_64.AppImage";
 in {
   options.clover.programs.deskreen = {
     enable = lib.mkEnableOption "Deskreen launcher";
