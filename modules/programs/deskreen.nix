@@ -38,7 +38,7 @@ in {
     xdg.desktopEntries.deskreen-local = {
       name = "Deskreen";
       exec = "${homeDir}/.local/bin/deskreen-local";
-      icon = "deskreen";
+      icon = "deskreen-ce";
       terminal = false;
       categories = [ "Network" "Utility" ];
     };
