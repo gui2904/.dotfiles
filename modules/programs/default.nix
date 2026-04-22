@@ -8,7 +8,7 @@
     ./editors
     ./hyprland.nix
     ./git.nix
-    ./deskreen.nix
+#    ./deskreen.nix
     ./telegram.nix
   ];
 }
