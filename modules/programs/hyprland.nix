@@ -23,7 +23,7 @@ in {
         "$editor" = "${pkgs.emacs}/bin/emacsclient -nc -a 'vim'";
         "$menu" = "${pkgs.rofi}/bin/kill rofi || rofi -show drun -modi drun,filebrowser,run,window";
 
-        windowrulev2 = [
+        windowrule = [
           "workspace 9 silent, class:^(telegram-tor)$"
         ];
 
