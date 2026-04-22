@@ -6,11 +6,16 @@
   clover = {
     programs = {
       zsh.enable = true;
+
+      telegram-tor.enable = true;
+
       hyprland.enable = true;
+
       emacs = {
         enable = true;
         client.enable = true;
       };
+
     };
 
     services = {
