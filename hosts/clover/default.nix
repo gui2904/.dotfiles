@@ -177,6 +177,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   
+  networking.firewall.allowedTCPPorts = [ 3131 22 ];
 
   system.stateVersion = "24.05"; # Did you read the comment?
 
