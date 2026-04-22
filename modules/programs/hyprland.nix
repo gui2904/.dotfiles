@@ -24,7 +24,7 @@ in {
         "$menu" = "${pkgs.rofi}/bin/kill rofi || rofi -show drun -modi drun,filebrowser,run,window";
 
         windowrule = [
-          "workspace 9 silent, class:^(telegram-tor)$"
+          "match:class ^(telegram-tor)$, workspace 9 silent"
         ];
 
         env = [
