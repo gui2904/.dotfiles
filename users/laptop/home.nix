@@ -9,6 +9,8 @@
 
       telegram-tor.enable = true;
 
+      deskreen.enable = true;
+
       hyprland.enable = true;
 
       emacs = {
