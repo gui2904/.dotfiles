@@ -41,10 +41,10 @@
       settings.main.font = "Fira Code:size=8";
     };
 
-    appimage = {
-      enable = true;
-      binfmt = true;
-    };
+    # appimage = {
+    #   enable = true;
+    #   binfmt = true;
+    # };
 
     dconf.enable = true;
   };
