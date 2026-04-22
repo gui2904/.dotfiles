@@ -35,12 +35,16 @@ in {
       '';
     };
 
-    xdg.desktopEntries.deskreen-local = {
-      name = "Deskreen";
-      exec = "${homeDir}/.local/bin/deskreen-local";
-      icon = "deskreen";
-      terminal = false;
-      categories = [ "Network" "Utility" ];
+    home.file.".local/share/applications/deskreen-local.desktop" = {
+      text = ''
+        [Desktop Entry]
+        Type=Application
+          Name=Deskreen
+          Exec=${homeDir}/.local/bin/deskreen-local
+          Icon=${homeDir}/.local/share/icons/hicolor/256x256/apps/deskreen-ce.png
+          Terminal=false
+          Categories=Network;Utility;
+      '';
     };
   };
 }
