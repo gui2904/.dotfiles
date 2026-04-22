@@ -43,6 +43,9 @@ in {
 
       initContent = ''
         [[ -o interactive ]] || return
+
+        export PATH="$HOME/.local/bin:$PATH"
+
         cat ~/.config/branding/art.txt
 
 
